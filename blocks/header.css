@@ -1,0 +1,29 @@
+.header {
+  padding: 0 30px 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  max-width: 882px;
+}
+
+.header__logo {
+  width: 126px;
+  max-width: 173px;
+}
+
+.header__line {
+  flex-grow: 1;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #fff;
+}
+
+@media screen and (min-width: 550px) {
+  .header {
+    gap: 41px;
+  }
+  .header__logo {
+    width: 173px;
+  }
+}
