@@ -1,5 +1,5 @@
 .cards {
-  padding: 50px;
+  padding: 30px 15px 50px;
 }
 
 .cards__container {
@@ -22,7 +22,7 @@
 }
 
 .card__image {
-  width: 282px;
+  width: 100%;
   height: 282px;
 }
 
@@ -45,4 +45,10 @@
   position: absolute;
   right: 18px;
   bottom: 315px;
+}
+
+@media screen and (min-width: 425px) {
+  .cards {
+    padding: 50px;
+  }
 }
