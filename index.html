@@ -119,7 +119,29 @@
       <p class="footer__copyright">&#169;2024. Fabiola Parra Vejar</p>
     </footer>
 
-    <div class="popup"></div>
+    <section class="popup">
+      <div class="popup__container">
+        <div class="popup__close-button"></div>
+        <h2 class="popup__title">Editar perfil</h2>
+        <form class="popup__form">
+          <input
+            type="text"
+            class="popup__form-input popup__form-input_type_name"
+            id="name"
+            placeholder="Nombre"
+            required
+          />
+          <input
+            type="text"
+            class="popup__form-input popup__form-input_type_about"
+            id="about"
+            placeholder="Acerca de mí"
+            required
+          />
+          <button type="button" class="popup__form-button">Guardar</button>
+        </form>
+      </div>
+    </section>
 
     <script src="./scripts/script.js"></script>
   </body>
