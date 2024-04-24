@@ -1,0 +1,29 @@
+.footer {
+  padding: 60px 0px 24px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.footer__copyright {
+  color: #545454;
+  font-size: 20px;
+  text-align: center;
+  margin: auto;
+}
+
+@media screen and (min-width: 425px) {
+  .footer {
+    padding: 60px 15px 24px;
+  }
+
+}
+
+@media screen and (min-width: 617px) {
+  .footer__copyright {
+    color: #545454;
+    font-size: 18px;
+    text-align: start;
+    margin: auto;
+  }
+
+}
