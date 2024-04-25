@@ -52,7 +52,7 @@
 }
 
 .profile__edit-button {
-  background-image: url(/images/profile__edit-button.svg);
+  background-image: url(./images/profile__edit-button.svg);
   background-repeat: no-repeat;
   background-position: center;
   width: 30px;
@@ -68,7 +68,7 @@
   border-radius: 5px;
   border-color: #fff;
   border-style: solid;
-  background-image: url(/images/profile__add-button.svg);
+  background-image: url(.images/profile__add-button.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 10%;
