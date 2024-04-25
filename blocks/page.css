@@ -3,5 +3,12 @@
   margin: auto;
   font-family: "Inter regular", Arial, sans-serif;
   color: #fff;
-  padding: 45px 25px;
+  padding: 45px 10px;
+}
+
+@media screen and (min-width: 425px) {
+  .page{
+    padding: 45px 20px;
+  }
+
 }
