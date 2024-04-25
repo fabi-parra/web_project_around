@@ -2,7 +2,7 @@
 
 La página web "Alrededor de Chile" es el quinto proyecto del curso de Desarrollo Web de Tripleten. Es una página que muestra imágenes del país, dando la opción de modificar el perfil y añadir nuevas fotos a la galería (esto se implementará en la siguiente etapa).
 
-# URL de la página: https://fabi-parra.github.io/web_project_homeland/
+# URL de la página: https://fabi-parra.github.io/web_project_around/
 
 ## Las principales secciones de la página son:
 
