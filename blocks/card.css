@@ -36,7 +36,7 @@
 }
 
 .card__icon_type_like {
-  background-image: url("/images/card__like-icon.svg");
+  background-image: url("../images/card__like-icon.svg");
   background-repeat: no-repeat;
   background-size: 90%;
   background-position: center;
@@ -51,7 +51,7 @@
 }
 
 .card__icon_type_trash {
-  background-image: url("/images/card__trash-icon.svg");
+  background-image: url("../images/card__trash-icon.svg");
   background-repeat: no-repeat;
   background-size: 90%;
   background-position: center;
