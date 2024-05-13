@@ -46,80 +46,27 @@
         </div>
       </section>
 
-      <section class="cards">
-        <article class="card">
-          <img
-            src="./images/1-card-image-valparaiso.jpeg"
-            alt="Fotografía de la playa Las Cruces, en Valparaíso"
-            class="card__image"
-          />
-          <h2 class="card__title">Valparaíso</h2>
-          <div class="card__icon card__icon_type_like"></div>
-          <div class="card__icon card__icon_type_trash"></div>
-        </article>
+      <section class="cards"></section>
 
+      <template class="card-template">
         <article class="card">
           <img
-            src="./images/2-card-image-araucania.jpeg"
-            alt="Fotografía de una araucaría, con la cordillera de fondo, en la región de la Araucanía"
+            src=""
+            alt=""
             class="card__image"
           />
-          <h2 class="card__title">Araucanía</h2>
+          <h2 class="card__title"></h2>
           <div class="card__icon card__icon_type_like"></div>
           <div class="card__icon card__icon_type_trash"></div>
         </article>
-
-        <article class="card">
-          <img
-            src="./images/3-card-image-chaiten.jpeg"
-            alt="Fotografía de un sendero en un bosque en Chaitén, sur de Chile"
-            class="card__image"
-          />
-          <h2 class="card__title">Chaitén</h2>
-          <div class="card__icon card__icon_type_like"></div>
-          <div class="card__icon card__icon_type_trash"></div>
-        </article>
-
-        <article class="card">
-          <img
-            src="./images/4-card-image-atacama.jpeg"
-            alt="Fotografía del desierto de Atacama, en el norte de Chile"
-            class="card__image"
-          />
-          <h2 class="card__title">Atacama</h2>
-          <div class="card__icon card__icon_type_like"></div>
-          <div class="card__icon card__icon_type_trash"></div>
-        </article>
-
-        <article class="card">
-          <img
-            src="./images/5-card-image-rapanui.jpeg"
-            alt="Fotografía de una fila de Moais en Isla de Pascua, al atardecer"
-            class="card__image"
-          />
-          <h2 class="card__title">Rapanui</h2>
-          <div class="card__icon card__icon_type_like"></div>
-          <div class="card__icon card__icon_type_trash"></div>
-        </article>
-
-        <article class="card">
-          <img
-            src="./images/6-card-image-torresdelpaine.jpeg"
-            alt="Fotografía de un guanaco con las Torres del Paine de fondo, en la patagonia chilena"
-            class="card__image"
-          />
-          <h2 class="card__title">Torres del Paine</h2>
-          <div class="card__icon card__icon_type_like"></div>
-          <div class="card__icon card__icon_type_trash"></div>
-        </article>
-      </section>
+      </template>
     </main>
 
     <footer class="footer">
       <p class="footer__copyright">&#169;2024. Fabiola Parra Vejar</p>
     </footer>
 
-    <section class="popup">
+    <section class="popup" id="popup-profile">
       <div class="popup__container">
         <div class="popup__close-button"></div>
         <h2 class="popup__title">Editar perfil</h2>
@@ -143,6 +90,6 @@
       </div>
     </section>
 
-    <script src="./scripts/script.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
