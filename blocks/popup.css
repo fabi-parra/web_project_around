@@ -63,7 +63,7 @@
 }
 
 .popup__close-button {
-  background-image: url(./images/popup__close-button.svg);
+  background-image: url(../images/popup__close-button.svg);
   background-repeat: no-repeat;
   background-position: center;
   width: 25px;

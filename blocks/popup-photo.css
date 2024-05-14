@@ -36,7 +36,7 @@
 }
 
 .popup-photo__close-button {
-  background-image: url(./images/popup__close-button.svg);
+  background-image: url(../images/popup__close-button.svg);
   background-repeat: no-repeat;
   background-position: center;
   border: none;
