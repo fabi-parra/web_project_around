@@ -27,6 +27,7 @@
   max-width: 75vw;
   max-height: 75vh;
   object-fit: cover;
+  border-radius: 15px;
 }
 
 .popup-photo__title{
