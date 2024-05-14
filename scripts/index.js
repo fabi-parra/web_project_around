@@ -61,12 +61,21 @@ function handleProfileFormSubmit(e){
 
 function createCard (name, link) {
   const card = cardTemplate.cloneNode(true).content.querySelector(".card");
+  const cardImage = card.querySelector(".card__image");
+  const cardTitle = card.querySelector(".card__title");
+  const deleteButton = card.querySelector(".card__icon_type_trash");
+  deleteButton.addEventListener("click", function(){
+    card.remove();
+  });
+  cardImage.src = link;
+  cardTitle.textContent = name;
+  cardImage.alt = name;
   cardsSection.append(card);
-}
+};
 
 initialCards.forEach(function(item){
-  createCard();
-})
+  createCard(item.name, item.link);
+});
 
 editProfileButton.addEventListener("click", handleOpenPopupProfile);
 closeProfileButton.addEventListener("click", handleClosePopupProfile);
