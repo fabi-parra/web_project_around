@@ -1,9 +1,9 @@
 const popupProfile = document.querySelector("#popup-profile");
-const popupProfileContainer = document.querySelector(".popup__container");
 const inputNameUser = document.querySelector(".popup__form-input_type_name");
 const inputAboutUser = document.querySelector(".popup__form-input_type_about");
 const saveButton = document.querySelector(".popup__form-button");
 const closeProfileButton = document.querySelector(".popup__close-button");
+
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 const editProfileButton = document.querySelector(".profile__edit-button");
@@ -12,7 +12,7 @@ const initialCards = [
   {
     name: "Valparaíso",
     link: "./images/1-card-image-valparaiso.jpeg",
-    alt: "Fotografía de la playa Las Cruces, en Valparaíso"
+    alt: "Fotografía de la playa Las Cruces, en Valparaíso",
   },
   {
     name: "Araucanía",
@@ -40,55 +40,80 @@ const initialCards = [
     alt: "Fotografía de un guanaco con las Torres del Paine de fondo, en la patagonia chilena",
   },
 ];
-
 const cardTemplate = document.querySelector(".card-template");
 const cardsSection = document.querySelector(".cards");
 
-function handleOpenPopupProfile (){
-  popupProfile.classList.add("popup_open");
-};
+const popupCards = document.querySelector("#popup-cards");
+const popupCardsForm = document.querySelector(".popup__form_cards");
+const addButton = document.querySelector(".profile__add-button");
+const closePopupCards = popupCards.querySelector(".popup__close-button");
+const inputFormPlaceTitle = document.querySelector(
+  ".popup__form-input_type_place"
+);
+const inputFormPlaceLink = document.querySelector(
+  ".popup__form-input_type_link"
+);
 
-function handleClosePopupProfile(){
-  popupProfile.classList.remove("popup_open");
-};
+function handleOpenPopups(popup) {
+  popup.classList.add("popup_open");
+}
 
-function handleProfileFormSubmit(e){
-  e.preventDefault();
-  popupProfile.classList.remove("popup_open");
-  profileName.textContent = inputNameUser.value;
-  profileDescription.textContent = inputAboutUser.value;
-};
+function handleClosePopups(popup) {
+  popup.classList.remove("popup_open");
+}
 
-function createCard (name, link) {
+editProfileButton.addEventListener("click", () => {
+  handleOpenPopups(popupProfile);
+});
+
+addButton.addEventListener("click", () => {
+  handleOpenPopups(popupCards);
+});
+
+closeProfileButton.addEventListener("click", () => {
+  handleClosePopups(popupProfile);
+});
+
+closePopupCards.addEventListener("click", () => {
+  handleClosePopups(popupCards);
+});
+
+function createCard(name, link) {
   const card = cardTemplate.cloneNode(true).content.querySelector(".card");
   const cardImage = card.querySelector(".card__image");
   const cardTitle = card.querySelector(".card__title");
   const deleteButton = card.querySelector(".card__icon_type_trash");
   const likeButton = card.querySelector(".card__icon_type_like");
-  deleteButton.addEventListener("click", function(){
+  deleteButton.addEventListener("click", function () {
     card.remove();
   });
-  likeButton.addEventListener("click", function(){
+  likeButton.addEventListener("click", function () {
     likeButton.classList.toggle("card__icon_type_like-active");
   });
   cardImage.src = link;
   cardTitle.textContent = name;
   cardImage.alt = name;
-  cardsSection.append(card);
-};
+  return card;
+}
 
-initialCards.forEach(function(item){
-  createCard(item.name, item.link);
+initialCards.forEach(function (item) {
+  const initialCard = createCard(item.name, item.link);
+  cardsSection.append(initialCard);
 });
 
-editProfileButton.addEventListener("click", handleOpenPopupProfile);
-closeProfileButton.addEventListener("click", handleClosePopupProfile);
+function handleProfileFormSubmit(e) {
+  e.preventDefault();
+  profileName.textContent = inputNameUser.value;
+  profileDescription.textContent = inputAboutUser.value;
+  popupProfile.classList.remove("popup_open");
+}
+
+function handlePopupCardsSubmit(e) {
+  e.preventDefault();
+  const newCard = createCard(inputFormPlaceTitle.value, inputFormPlaceLink.value);
+  popupCards.classList.remove("popup_open");
+  cardsSection.prepend(newCard);
+}
+
 popupProfile.addEventListener("submit", handleProfileFormSubmit);
-
-
-
-
-
-
-
-
+popupCardsForm.addEventListener("submit", handlePopupCardsSubmit);
