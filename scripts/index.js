@@ -47,12 +47,13 @@ const popupCards = document.querySelector("#popup-cards");
 const popupCardsForm = document.querySelector(".popup__form_cards");
 const addButton = document.querySelector(".profile__add-button");
 const closePopupCards = popupCards.querySelector(".popup__close-button");
-const inputFormPlaceTitle = document.querySelector(
-  ".popup__form-input_type_place"
-);
-const inputFormPlaceLink = document.querySelector(
-  ".popup__form-input_type_link"
-);
+const inputFormPlaceTitle = document.querySelector(".popup__form-input_type_place");
+const inputFormPlaceLink = document.querySelector(".popup__form-input_type_link");
+
+const popupPhoto = document.querySelector(".popup-photo");
+const popupPhotoCloseButton = document.querySelector(".popup-photo__close-button");
+const popupPhotoImage = document.querySelector(".popup-photo__image");
+const popupPhotoTitle = document.querySelector(".popup-photo__title");
 
 function handleOpenPopups(popup) {
   popup.classList.add("popup_open");

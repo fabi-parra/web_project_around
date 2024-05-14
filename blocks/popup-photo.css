@@ -1,0 +1,53 @@
+.popup-photo {
+  position: fixed;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+}
+
+.popup-photo_open {
+  opacity: 1;
+  pointer-events: unset;
+}
+
+.popup-photo__container {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  margin: auto;
+}
+
+.popup-photo__image {
+  max-width: 75vw;
+  max-height: 75vh;
+  object-fit: cover;
+}
+
+.popup-photo__title{
+  font-family: 'Inter regular';
+  margin: 0;
+  font-size: 18px;
+}
+
+.popup-photo__close-button {
+  background-image: url(/images/popup__close-button.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  background-color: transparent;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  cursor: pointer;
+}
+
+.popup-photo__close-button:hover {
+  opacity: .6;
+}
