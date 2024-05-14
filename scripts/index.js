@@ -51,7 +51,7 @@ const inputFormPlaceTitle = document.querySelector(".popup__form-input_type_plac
 const inputFormPlaceLink = document.querySelector(".popup__form-input_type_link");
 
 const popupPhoto = document.querySelector(".popup-photo");
-const popupPhotoCloseButton = document.querySelector(".popup-photo__close-button");
+const buttonClosePopupPhoto = document.querySelector(".popup-photo__close-button");
 const popupPhotoImage = document.querySelector(".popup-photo__image");
 const popupPhotoTitle = document.querySelector(".popup-photo__title");
 
@@ -91,6 +91,12 @@ function createCard(name, link) {
   likeButton.addEventListener("click", function () {
     likeButton.classList.toggle("card__icon_type_like-active");
   });
+
+  cardImage.addEventListener("click", function (){
+    popupPhotoImage.src = link;
+    popupPhotoTitle.textContent = name;
+    popupPhoto.classList.add("popup-photo_open");
+  })
   cardImage.src = link;
   cardTitle.textContent = name;
   cardImage.alt = name;
@@ -118,3 +124,7 @@ function handlePopupCardsSubmit(e) {
 
 popupProfile.addEventListener("submit", handleProfileFormSubmit);
 popupCardsForm.addEventListener("submit", handlePopupCardsSubmit);
+buttonClosePopupPhoto.addEventListener("click", function(){
+  popupPhoto.classList.remove("popup-photo_open");
+});
+
