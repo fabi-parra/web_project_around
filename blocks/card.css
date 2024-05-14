@@ -45,6 +45,10 @@
   bottom: 24px;
 }
 
+.card__icon_type_like-active {
+  background-image: url("../images/card__like-icon-active.svg");
+}
+
 .card__icon_type_like:hover{
   opacity: .6;
   cursor: pointer;
