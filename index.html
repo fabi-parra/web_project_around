@@ -6,7 +6,7 @@
     <title>Alrededor de Chile</title>
     <meta
       name="description"
-      content="Conoce algunos lugares hermosos de este Chile"
+      content="Conoce algunos lugares hermosos de Chile"
     />
     <meta
       name="keywords"
@@ -77,6 +77,8 @@
             id="name"
             placeholder="Nombre"
             required
+            minlength="2"
+            maxlength="40"
           />
           <input
             type="text"
@@ -84,6 +86,8 @@
             id="about"
             placeholder="Acerca de mí"
             required
+            minlength="2"
+            maxlength="200"
           />
           <button type="submit" value="submit" class="popup__form-button">
             Guardar
@@ -100,12 +104,14 @@
           <input
             type="text"
             class="popup__form-input popup__form-input_type_place"
-            id="name-place"
+            id="place-name"
             placeholder="Título"
+            minlength="2"
+            maxlength="30"
             required
           />
           <input
-            type="text"
+            type="url"
             class="popup__form-input popup__form-input_type_link"
             id="image-link"
             placeholder="Enlace a la imagen"
@@ -127,5 +133,6 @@
     </section>
 
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validation.js"></script>
   </body>
 </html>
