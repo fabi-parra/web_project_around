@@ -55,9 +55,9 @@ const popupPhotoImage = document.querySelector(".popup-photo__image");
 const popupPhotoTitle = document.querySelector(".popup-photo__title");
 
 function handleOpenPopups(popup) {
+  const buttonSave = popup.querySelector(".popup__form-button");
   popup.classList.add("popup_open");
-  const saveButton = popup.querySelector(".popup__form-button");
-  saveButton.classList.add("popup__form-button_disabled");
+  buttonSave.classList.add("popup__form-button_disabled");
 }
 
 function handleClosePopups(popup) {
@@ -102,6 +102,11 @@ function handlePopupCardsSubmit(e) {
   cardsSection.prepend(newCard);
 }
 
+initialCards.forEach(function (item) {
+  const initialCard = createCard(item.name, item.link);
+  cardsSection.append(initialCard);
+});
+
 editProfileButton.addEventListener("click", () => {
   handleOpenPopups(popupProfile);
 });
@@ -116,11 +121,6 @@ popupProfileCloseButton.addEventListener("click", () => {
 
 popupCardsCloseButton.addEventListener("click", () => {
   handleClosePopups(popupCards);
-});
-
-initialCards.forEach(function (item) {
-  const initialCard = createCard(item.name, item.link);
-  cardsSection.append(initialCard);
 });
 
 popupProfile.addEventListener("submit", handleProfileFormSubmit);
