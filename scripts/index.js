@@ -1,4 +1,3 @@
-const popups = document.querySelectorAll(".popup");
 const popupProfile = document.querySelector("#popup-profile");
 const inputNameUser = document.querySelector(".popup__form-input_type_name");
 const inputAboutUser = document.querySelector(".popup__form-input_type_about");
@@ -71,14 +70,6 @@ function handleClosePopups(popup) {
   popup.classList.remove("popup_open");
 }
 
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    handleClosePopups(popupCards);
-    handleClosePopups(popupPhoto);
-    handleClosePopups(popupProfile);
-  }
-});
-
 function createCard(name, link) {
   const card = cardTemplate.cloneNode(true).content.querySelector(".card");
   const cardImage = card.querySelector(".card__image");
@@ -144,6 +135,14 @@ popupCardsCloseButton.addEventListener("click", () => {
 
 popupPhotoCloseButton.addEventListener("click", () => {
   handleClosePopups(popupPhoto);
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    handleClosePopups(popupCards);
+    handleClosePopups(popupPhoto);
+    handleClosePopups(popupProfile);
+  }
 });
 
 popupProfile.addEventListener("click", (e) => {
