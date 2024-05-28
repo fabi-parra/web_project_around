@@ -1,7 +1,10 @@
+const popups = document.querySelectorAll(".popup");
 const popupProfile = document.querySelector("#popup-profile");
 const inputNameUser = document.querySelector(".popup__form-input_type_name");
 const inputAboutUser = document.querySelector(".popup__form-input_type_about");
-const popupProfileCloseButton = document.querySelector(".popup__close-button");
+const popupProfileCloseButton = popupProfile.querySelector(
+  ".popup__close-button"
+);
 
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
@@ -46,13 +49,17 @@ const popupCards = document.querySelector("#popup-cards");
 const popupCardsForm = document.querySelector(".popup__form_cards");
 const addCardsButton = document.querySelector(".profile__add-button");
 const popupCardsCloseButton = popupCards.querySelector(".popup__close-button");
-const inputFormPlaceTitle = document.querySelector(".popup__form-input_type_place");
-const inputFormPlaceLink = document.querySelector(".popup__form-input_type_link");
+const inputFormPlaceTitle = document.querySelector(
+  ".popup__form-input_type_place"
+);
+const inputFormPlaceLink = document.querySelector(
+  ".popup__form-input_type_link"
+);
 
-const popupPhoto = document.querySelector(".popup-photo");
-const popupPhotoCloseButton = document.querySelector(".popup-photo__close-button");
-const popupPhotoImage = document.querySelector(".popup-photo__image");
-const popupPhotoTitle = document.querySelector(".popup-photo__title");
+const popupPhoto = document.querySelector("#popup-photo");
+const popupPhotoCloseButton = popupPhoto.querySelector(".popup__close-button");
+const popupPhotoImage = document.querySelector(".popup__image");
+const popupPhotoTitle = document.querySelector(".popup__subtitle");
 
 function handleOpenPopups(popup) {
   const buttonSave = popup.querySelector(".popup__form-button");
@@ -63,6 +70,14 @@ function handleOpenPopups(popup) {
 function handleClosePopups(popup) {
   popup.classList.remove("popup_open");
 }
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    handleClosePopups(popupCards);
+    handleClosePopups(popupPhoto);
+    handleClosePopups(popupProfile);
+  }
+});
 
 function createCard(name, link) {
   const card = cardTemplate.cloneNode(true).content.querySelector(".card");
@@ -77,11 +92,12 @@ function createCard(name, link) {
     likeButton.classList.toggle("card__icon_type_like-active");
   });
 
-  cardImage.addEventListener("click", function (){
+  cardImage.addEventListener("click", function () {
     popupPhotoImage.src = link;
     popupPhotoTitle.textContent = name;
-    popupPhoto.classList.add("popup-photo_open");
-  })
+    popupPhoto.classList.add("popup_open");
+  });
+
   cardImage.src = link;
   cardTitle.textContent = name;
   cardImage.alt = name;
@@ -97,8 +113,11 @@ function handleProfileFormSubmit(e) {
 
 function handlePopupCardsSubmit(e) {
   e.preventDefault();
-  const newCard = createCard(inputFormPlaceTitle.value, inputFormPlaceLink.value);
-  popupCards.classList.remove("popup_open");
+  const newCard = createCard(
+    inputFormPlaceTitle.value,
+    inputFormPlaceLink.value
+  );
+  handleClosePopups(popupCards);
   cardsSection.prepend(newCard);
 }
 
@@ -123,11 +142,27 @@ popupCardsCloseButton.addEventListener("click", () => {
   handleClosePopups(popupCards);
 });
 
-popupProfile.addEventListener("submit", handleProfileFormSubmit);
-popupCardsForm.addEventListener("submit", handlePopupCardsSubmit);
-popupPhotoCloseButton.addEventListener("click", function(){
-  popupPhoto.classList.remove("popup-photo_open");
+popupPhotoCloseButton.addEventListener("click", () => {
+  handleClosePopups(popupPhoto);
 });
 
+popupProfile.addEventListener("click", (e) => {
+  if (e.target === popupProfile) {
+    handleClosePopups(popupProfile);
+  }
+});
 
+popupCards.addEventListener("click", (e) => {
+  if (e.target === popupCards) {
+    handleClosePopups(popupCards);
+  }
+});
 
+popupPhoto.addEventListener("click", (e) => {
+  if (e.target === popupPhoto) {
+    handleClosePopups(popupPhoto);
+  }
+});
+
+popupProfile.addEventListener("submit", handleProfileFormSubmit);
+popupCardsForm.addEventListener("submit", handlePopupCardsSubmit);
