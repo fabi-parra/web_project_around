@@ -12,32 +12,32 @@ const editProfileButton = document.querySelector(".profile__edit-button");
 const initialCards = [
   {
     name: "Valparaíso",
-    link: "./images/1-card-image-valparaiso.jpeg",
+    link: "./images/1-card-image.jpeg",
     alt: "Fotografía de la playa Las Cruces, en Valparaíso",
   },
   {
     name: "Araucanía",
-    link: "./images/2-card-image-araucania.jpeg",
+    link: "./images/2-card-image.jpeg",
     alt: "Fotografía de una araucaría, con la cordillera de fondo, en la región de la Araucanía",
   },
   {
     name: "Chaitén",
-    link: "./images/3-card-image-chaiten.jpeg",
+    link: "./images/3-card-image.jpeg",
     alt: "Fotografía de un sendero en un bosque en Chaitén, sur de Chile",
   },
   {
     name: "Atacama",
-    link: "./images/4-card-image-atacama.jpeg",
+    link: "./images/4-card-image.jpeg",
     alt: "Fotografía del desierto de Atacama, en el norte de Chile",
   },
   {
     name: "Rapanui",
-    link: "./images/5-card-image-rapanui.jpeg",
+    link: "./images/5-card-image.jpeg",
     alt: "Fotografía de una fila de Moais en Isla de Pascua, al atardecer",
   },
   {
     name: "Torres del Paine",
-    link: "./images/6-card-image-torresdelpaine.jpeg",
+    link: "./images/6-card-image.jpeg",
     alt: "Fotografía de un guanaco con las Torres del Paine de fondo, en la patagonia chilena",
   },
 ];
@@ -64,6 +64,12 @@ function handleEscapeKey(e, popup) {
   if (e.key === "Escape") {
     handleClosePopups(popup);
   }
+}
+
+function handleClickOut (e){
+  if (e.target.className === "popup popup_open") {
+    handleClosePopups(e.target);
+  };
 }
 
 function handleOpenPopups(popup) {
@@ -124,6 +130,9 @@ initialCards.forEach(function (item) {
   cardsSection.append(initialCard);
 });
 
+inputNameUser.value = profileName.textContent;
+inputAboutUser.value = profileDescription.textContent;
+
 editProfileButton.addEventListener("click", () => {
   handleOpenPopups(popupProfile);
   inputNameUser.value = profileName.textContent;
@@ -146,24 +155,9 @@ popupPhotoCloseButton.addEventListener("click", () => {
   handleClosePopups(popupPhoto);
 });
 
-
-popupProfile.addEventListener("click", (e) => {
-  if (e.target === popupProfile) {
-    handleClosePopups(popupProfile);
-  }
-});
-
-popupCards.addEventListener("click", (e) => {
-  if (e.target === popupCards) {
-    handleClosePopups(popupCards);
-  }
-});
-
-popupPhoto.addEventListener("click", (e) => {
-  if (e.target === popupPhoto) {
-    handleClosePopups(popupPhoto);
-  }
-});
+popupProfile.addEventListener("click", handleClickOut);
+popupCards.addEventListener("click", handleClickOut);
+popupPhoto.addEventListener("click", handleClickOut);
 
 popupProfile.addEventListener("submit", handleProfileFormSubmit);
 popupCardsForm.addEventListener("submit", handlePopupCardsSubmit);
