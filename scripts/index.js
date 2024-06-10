@@ -7,7 +7,7 @@ const popupProfileCloseButton = popupProfile.querySelector(
 
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
-const editProfileButton = document.querySelector(".profile__edit-button");
+const profileEditButton = document.querySelector(".profile__edit-button");
 
 const initialCards = [
   {
@@ -66,7 +66,7 @@ function handleEscapeKey(e, popup) {
   }
 }
 
-function handleClickOut (e){
+function handleClickOutside (e){
   if (e.target.className === "popup popup_open") {
     handleClosePopups(e.target);
   };
@@ -133,7 +133,7 @@ initialCards.forEach(function (item) {
 inputNameUser.value = profileName.textContent;
 inputAboutUser.value = profileDescription.textContent;
 
-editProfileButton.addEventListener("click", () => {
+profileEditButton.addEventListener("click", () => {
   handleOpenPopups(popupProfile);
   inputNameUser.value = profileName.textContent;
   inputAboutUser.value = profileDescription.textContent;
@@ -155,9 +155,9 @@ popupPhotoCloseButton.addEventListener("click", () => {
   handleClosePopups(popupPhoto);
 });
 
-popupProfile.addEventListener("click", handleClickOut);
-popupCards.addEventListener("click", handleClickOut);
-popupPhoto.addEventListener("click", handleClickOut);
+popupProfile.addEventListener("click", handleClickOutside);
+popupCards.addEventListener("click", handleClickOutside);
+popupPhoto.addEventListener("click", handleClickOutside);
 
 popupProfile.addEventListener("submit", handleProfileFormSubmit);
 popupCardsForm.addEventListener("submit", handlePopupCardsSubmit);

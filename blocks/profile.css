@@ -1,8 +1,5 @@
 .profile {
   padding: 42px 19px 33px;
-}
-
-.profile__container {
   max-width: 882px;
   margin: auto;
   display: flex;
@@ -86,7 +83,7 @@
 
 @media screen and (min-width: 425px) {
   .profile {
-    padding: 42px 20px 33px;
+    padding: 42px 40px 33px;
   }
 
   .profile__name {
@@ -99,7 +96,7 @@
 }
 
 @media screen and (min-width: 500px) {
-  .profile__container {
+  .profile {
     max-width: 900px;
     display: flex;
     flex-direction: row;
