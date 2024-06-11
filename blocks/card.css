@@ -55,8 +55,8 @@
   cursor: pointer;
 }
 
-.card__icon_type_trash {
-  background-image: url("../images/card__trash-icon.svg");
+.card__icon_type_delete {
+  background-image: url("../images/card__delete-icon.svg");
   background-repeat: no-repeat;
   background-size: 90%;
   background-position: center;
@@ -65,7 +65,7 @@
   bottom: 315px;
 }
 
-.card__icon_type_trash:hover{
+.card__icon_type_delete:hover{
   opacity: .6;
   cursor: pointer;
 }

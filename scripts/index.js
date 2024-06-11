@@ -87,7 +87,7 @@ function createCard(name, link) {
   const card = cardTemplate.cloneNode(true).content.querySelector(".card");
   const cardImage = card.querySelector(".card__image");
   const cardTitle = card.querySelector(".card__title");
-  const deleteButton = card.querySelector(".card__icon_type_trash");
+  const deleteButton = card.querySelector(".card__icon_type_delete");
   const likeButton = card.querySelector(".card__icon_type_like");
   deleteButton.addEventListener("click", function () {
     card.remove();
