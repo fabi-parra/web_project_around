@@ -1,3 +1,11 @@
+function toggleButtonState(inputList, buttonElement, config) {
+  if (hasInvalidInput(inputList)) {
+    buttonElement.classList.add(config.inactiveButtonClass);
+  } else {
+    buttonElement.classList.remove(config.inactiveButtonClass);
+  }
+};
+
 function showInputError(formElement, inputElement, errorMessage, config) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(config.inputErrorClass);
@@ -30,14 +38,6 @@ function hasInvalidInput(inputList) {
     return !inputElement.validity.valid;
   });
 }
-
-function toggleButtonState(inputList, buttonElement, config) {
-  if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add(config.inactiveButtonClass);
-  } else {
-    buttonElement.classList.remove(config.inactiveButtonClass);
-  }
-};
 
 function setEventListeners(formElement, config) {
   const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
