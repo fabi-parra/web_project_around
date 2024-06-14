@@ -76,13 +76,13 @@ export const popupPhotoCloseButton = popupPhoto.querySelector(
 export const popupPhotoImage = document.querySelector(".popup__image");
 export const popupPhotoTitle = document.querySelector(".popup__subtitle");
 
-function handleEscapeKey(e, popup) {
+export function handleEscapeKey(e, popup) {
   if (e.key === "Escape") {
     handleClosePopups(popup);
   }
 }
 
-function handleClickOutside(e) {
+export function handleClickOutside(e) {
   if (e.target.className === "popup popup_open") {
     handleClosePopups(e.target);
   }
@@ -95,34 +95,9 @@ export function handleOpenPopups(popup) {
   });
 }
 
-function handleClosePopups(popup) {
+export function handleClosePopups(popup) {
   popup.classList.remove("popup_open");
 }
-
-// function createCard(name, link) {
-//   const card = cardTemplate.cloneNode(true).content.querySelector(".card");
-//   const cardImage = card.querySelector(".card__image");
-//   const cardTitle = card.querySelector(".card__title");
-//   const deleteButton = card.querySelector(".card__icon_type_delete");
-//   const likeButton = card.querySelector(".card__icon_type_like");
-//   deleteButton.addEventListener("click", function () {
-//     card.remove();
-//   });
-//   likeButton.addEventListener("click", function () {
-//     likeButton.classList.toggle("card__icon_type_like-active");
-//   });
-
-//   cardImage.addEventListener("click", function () {
-//     popupPhotoImage.src = link;
-//     popupPhotoTitle.textContent = name;
-//     handleOpenPopups(popupPhoto);
-//   });
-
-//   cardImage.src = link;
-//   cardTitle.textContent = name;
-//   cardImage.alt = name;
-//   return card;
-// }
 
 function handleProfileFormSubmit(e) {
   e.preventDefault();
@@ -179,7 +154,7 @@ popupProfileForm.addEventListener("submit", handleProfileFormSubmit);
 popupCardsForm.addEventListener("submit", handlePopupCardsSubmit);
 
 const config = {
-  // formSelector: ".popup__form",
+  formSelector: ".popup__form",
   inputSelector: ".popup__form-input",
   submitButtonSelector: ".popup__form-button",
   inactiveButtonClass: "popup__form-button_disabled",

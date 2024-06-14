@@ -7,35 +7,32 @@ export default class FormValidator {
   }
 
   _setEventListeners() {
-    console.log("set event listeners");
-    console.log(this._checkInputValidity());
-    const inputList = Array.from(
+    this._inputList = Array.from(
       this._formElement.querySelectorAll(this._config.inputSelector)
     );
-    const buttonElement = this._formElement.querySelector(
+    this._buttonElement = this._formElement.querySelector(
       this._config.submitButtonSelector
     );
-    this._toggleButtonState(inputList, buttonElement);
-    inputList.forEach((inputElement) => {
+    this._toggleButtonState();
+    this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
         this._checkInputValidity(inputElement);
-        this._toggleButtonState(inputList);
+        this._toggleButtonState();
       });
     });
   }
 
-  _toggleButtonState(inputList, buttonElement) {
-    console.log("toggle button");
-    if (this._hasInvalidInput(inputList)) {
-      buttonElement.classList.add(this._config.inactiveButtonClass);
+  _toggleButtonState() {
+    if (this._hasInvalidInput()) {
+      this._buttonElement.classList.add(this._config.inactiveButtonClass);
     } else {
-      buttonElement.classList.remove(this._config.inactiveButtonClass);
+      this._buttonElement.classList.remove(this._config.inactiveButtonClass);
     }
   }
 
-  _hasInvalidInput(inputList) {
-    return inputList.some((inputElement) => {
-      return inputElement.validity.valid;
+  _hasInvalidInput() {
+    return this._inputList.some((inputElement) => {
+      return !inputElement.validity.valid;
     });
   }
 
@@ -52,7 +49,7 @@ export default class FormValidator {
     const errorElement = this._formElement.querySelector(
       `.${inputElement.id}-error`
     );
-    this._inputElement.classList.remove(this._config.inputErrorClass);
+    inputElement.classList.remove(this._config.inputErrorClass);
     errorElement.classList.remove(this._config.inputErrorMessageClass);
     errorElement.textContent = " ";
   }
