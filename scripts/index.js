@@ -1,5 +1,5 @@
 import Card from "../components/Card.js";
-// import Validator from "../components/FormValidator.js";
+import FormValidator from "../components/FormValidator.js";
 
 export const popupProfile = document.querySelector("#popup-profile");
 export const popupProfileForm = document.querySelector(".popup__form_profile");
@@ -177,3 +177,19 @@ popupPhoto.addEventListener("click", handleClickOutside);
 
 popupProfileForm.addEventListener("submit", handleProfileFormSubmit);
 popupCardsForm.addEventListener("submit", handlePopupCardsSubmit);
+
+const config = {
+  // formSelector: ".popup__form",
+  inputSelector: ".popup__form-input",
+  submitButtonSelector: ".popup__form-button",
+  inactiveButtonClass: "popup__form-button_disabled",
+  inputErrorClass: "popup__form-input_type_error",
+  inputErrorMessageClass: "popup__form-error-message",
+};
+
+const profileFormValidator = new FormValidator(config, popupProfileForm);
+profileFormValidator.enableValidation();
+const cardsFormValidator = new FormValidator(config, popupCardsForm);
+cardsFormValidator.enableValidation();
+
+
