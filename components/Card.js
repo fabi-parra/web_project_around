@@ -3,8 +3,9 @@ import {
   popupPhoto,
   popupPhotoImage,
   popupPhotoTitle,
-  handleOpenPopups,
 } from "../scripts/index.js";
+
+import { handleOpenPopups } from "../scripts/utils.js";
 
 export default class Card {
   constructor(name, link) {
@@ -27,11 +28,11 @@ export default class Card {
     this._cardImage.alt = this._name;
   }
 
-  _handlelikeCard(){
+  _handlelikeCard() {
     this._likeButton.classList.toggle("card__icon_type_like-active");
   }
 
-  _handleDeleteCard(){
+  _handleDeleteCard() {
     this._card.remove();
   }
 

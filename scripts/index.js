@@ -1,23 +1,28 @@
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
+import {
+  handleOpenPopups,
+  handleClosePopups,
+  handleClickOutside,
+} from "./utils.js";
 
-export const popupProfile = document.querySelector("#popup-profile");
-export const popupProfileForm = document.querySelector(".popup__form_profile");
-export const inputNameUser = document.querySelector(
+const popupProfile = document.querySelector("#popup-profile");
+const popupProfileForm = document.querySelector(".popup__form_profile");
+const inputNameUser = document.querySelector(
   ".popup__form-input_type_name"
 );
-export const inputAboutUser = document.querySelector(
+const inputAboutUser = document.querySelector(
   ".popup__form-input_type_about"
 );
-export const popupProfileCloseButton = popupProfile.querySelector(
+const popupProfileCloseButton = popupProfile.querySelector(
   ".popup__close-button"
 );
 
-export const profileName = document.querySelector(".profile__name");
-export const profileDescription = document.querySelector(
+const profileName = document.querySelector(".profile__name");
+const profileDescription = document.querySelector(
   ".profile__description"
 );
-export const profileEditButton = document.querySelector(
+const profileEditButton = document.querySelector(
   ".profile__edit-button"
 );
 
@@ -54,50 +59,27 @@ const initialCards = [
   },
 ];
 export const cardTemplate = document.querySelector(".card-template");
-export const cardsSection = document.querySelector(".cards");
+const cardsSection = document.querySelector(".cards");
 
-export const popupCards = document.querySelector("#popup-cards");
-export const popupCardsForm = document.querySelector(".popup__form_cards");
-export const addCardsButton = document.querySelector(".profile__add-button");
-export const popupCardsCloseButton = popupCards.querySelector(
+const popupCards = document.querySelector("#popup-cards");
+const popupCardsForm = document.querySelector(".popup__form_cards");
+const addCardsButton = document.querySelector(".profile__add-button");
+const popupCardsCloseButton = popupCards.querySelector(
   ".popup__close-button"
 );
-export const inputFormPlaceTitle = document.querySelector(
+const inputFormPlaceTitle = document.querySelector(
   ".popup__form-input_type_place"
 );
-export const inputFormPlaceLink = document.querySelector(
+const inputFormPlaceLink = document.querySelector(
   ".popup__form-input_type_link"
 );
 
 export const popupPhoto = document.querySelector("#popup-photo");
-export const popupPhotoCloseButton = popupPhoto.querySelector(
+const popupPhotoCloseButton = popupPhoto.querySelector(
   ".popup__close-button"
 );
 export const popupPhotoImage = document.querySelector(".popup__image");
 export const popupPhotoTitle = document.querySelector(".popup__subtitle");
-
-export function handleEscapeKey(e, popup) {
-  if (e.key === "Escape") {
-    handleClosePopups(popup);
-  }
-}
-
-export function handleClickOutside(e) {
-  if (e.target.className === "popup popup_open") {
-    handleClosePopups(e.target);
-  }
-}
-
-export function handleOpenPopups(popup) {
-  popup.classList.add("popup_open");
-  document.addEventListener("keydown", (e) => {
-    handleEscapeKey(e, popup);
-  });
-}
-
-export function handleClosePopups(popup) {
-  popup.classList.remove("popup_open");
-}
 
 function handleProfileFormSubmit(e) {
   e.preventDefault();
@@ -166,5 +148,3 @@ const profileFormValidator = new FormValidator(config, popupProfileForm);
 profileFormValidator.enableValidation();
 const cardsFormValidator = new FormValidator(config, popupCardsForm);
 cardsFormValidator.enableValidation();
-
-
