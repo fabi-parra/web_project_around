@@ -1,11 +1,11 @@
-import {
-  cardTemplate,
-  popupPhoto,
-  popupPhotoImage,
-  popupPhotoTitle,
-} from "../scripts/index.js";
+export function handleOpenPopups(popup) {
+  popup.classList.add("popup_open");
+}
 
-import { handleOpenPopups } from "../scripts/utils.js";
+const cardTemplate = document.querySelector(".card-template");
+export const popupPhoto = document.querySelector("#popup-photo");
+export const popupPhotoImage = document.querySelector(".popup__image");
+export const popupPhotoTitle = document.querySelector(".popup__subtitle");
 
 export default class Card {
   constructor(name, link) {
@@ -46,6 +46,7 @@ export default class Card {
     this._cardImage.addEventListener("click", () => {
       handleOpenPopups(popupPhoto);
       popupPhotoImage.src = this._link;
+      popupPhotoImage.alt = this._name;
       popupPhotoTitle.textContent = this._name;
     });
   }

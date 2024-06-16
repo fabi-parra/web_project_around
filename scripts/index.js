@@ -1,30 +1,23 @@
-import Card from "../components/Card.js";
-import FormValidator from "../components/FormValidator.js";
+import Card from "./Card.js";
+import FormValidator from "./FormValidator.js";
 import {
-  handleOpenPopups,
+  handleEscapeKey,
   handleClosePopups,
   handleClickOutside,
 } from "./utils.js";
+import { popupPhoto, handleOpenPopups } from "./Card.js";
 
 const popupProfile = document.querySelector("#popup-profile");
 const popupProfileForm = document.querySelector(".popup__form_profile");
-const inputNameUser = document.querySelector(
-  ".popup__form-input_type_name"
-);
-const inputAboutUser = document.querySelector(
-  ".popup__form-input_type_about"
-);
+const inputNameUser = document.querySelector(".popup__form-input_type_name");
+const inputAboutUser = document.querySelector(".popup__form-input_type_about");
 const popupProfileCloseButton = popupProfile.querySelector(
   ".popup__close-button"
 );
 
 const profileName = document.querySelector(".profile__name");
-const profileDescription = document.querySelector(
-  ".profile__description"
-);
-const profileEditButton = document.querySelector(
-  ".profile__edit-button"
-);
+const profileDescription = document.querySelector(".profile__description");
+const profileEditButton = document.querySelector(".profile__edit-button");
 
 const initialCards = [
   {
@@ -58,15 +51,12 @@ const initialCards = [
     alt: "Fotografía de un guanaco con las Torres del Paine de fondo, en la patagonia chilena",
   },
 ];
-export const cardTemplate = document.querySelector(".card-template");
 const cardsSection = document.querySelector(".cards");
 
 const popupCards = document.querySelector("#popup-cards");
 const popupCardsForm = document.querySelector(".popup__form_cards");
 const addCardsButton = document.querySelector(".profile__add-button");
-const popupCardsCloseButton = popupCards.querySelector(
-  ".popup__close-button"
-);
+const popupCardsCloseButton = popupCards.querySelector(".popup__close-button");
 const inputFormPlaceTitle = document.querySelector(
   ".popup__form-input_type_place"
 );
@@ -74,12 +64,7 @@ const inputFormPlaceLink = document.querySelector(
   ".popup__form-input_type_link"
 );
 
-export const popupPhoto = document.querySelector("#popup-photo");
-const popupPhotoCloseButton = popupPhoto.querySelector(
-  ".popup__close-button"
-);
-export const popupPhotoImage = document.querySelector(".popup__image");
-export const popupPhotoTitle = document.querySelector(".popup__subtitle");
+const popupPhotoCloseButton = popupPhoto.querySelector(".popup__close-button");
 
 function handleProfileFormSubmit(e) {
   e.preventDefault();
@@ -126,6 +111,12 @@ popupCardsCloseButton.addEventListener("click", () => {
 
 popupPhotoCloseButton.addEventListener("click", () => {
   handleClosePopups(popupPhoto);
+});
+
+document.addEventListener("keydown", (e) => {
+  handleEscapeKey(e, popupProfile);
+  handleEscapeKey(e, popupCards);
+  handleEscapeKey(e, popupPhoto);
 });
 
 popupProfile.addEventListener("click", handleClickOutside);
