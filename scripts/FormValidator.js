@@ -2,8 +2,6 @@ export default class FormValidator {
   constructor(config, formElement) {
     this._config = config;
     this._formElement = formElement;
-    console.log(config);
-    console.log(formElement);
   }
 
   _setEventListeners() {
