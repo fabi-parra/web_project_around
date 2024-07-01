@@ -37,7 +37,7 @@
 }
 
 .card__icon_type_like {
-  background-image: url("../images/1-card-image.jpeg");
+  background-image: url("../images/card__like-icon.svg");
   background-repeat: no-repeat;
   background-size: 90%;
   background-position: center;

@@ -1,4 +1,4 @@
-import "./pages/index.css";
+import "../pages/index.css";
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 import {
@@ -23,32 +23,32 @@ const profileEditButton = document.querySelector(".profile__edit-button");
 const initialCards = [
   {
     name: "Valparaíso",
-    link: "./src/images/1-card-image.jpeg",
+    link: "https://i.imgur.com/nwVAJkI.jpg",
     alt: "Fotografía de la playa Las Cruces, en Valparaíso",
   },
   {
     name: "Araucanía",
-    link: "./src/images/2-card-image.jpeg",
+    link: "https://i.imgur.com/VGFVUW6.jpg",
     alt: "Fotografía de una araucaría, con la cordillera de fondo, en la región de la Araucanía",
   },
   {
     name: "Chaitén",
-    link: "./src/images/3-card-image.jpeg",
+    link: "https://i.imgur.com/YsE5mUk.jpg",
     alt: "Fotografía de un sendero en un bosque en Chaitén, sur de Chile",
   },
   {
     name: "Atacama",
-    link: "./src/images/4-card-image.jpeg",
+    link: "https://i.imgur.com/TxPxRfz.jpg",
     alt: "Fotografía del desierto de Atacama, en el norte de Chile",
   },
   {
     name: "Rapanui",
-    link: "./src/images/5-card-image.jpeg",
+    link: "https://i.imgur.com/JaPHfQA.jpg",
     alt: "Fotografía de una fila de Moais en Isla de Pascua, al atardecer",
   },
   {
     name: "Torres del Paine",
-    link: "./src/images/6-card-image.jpeg",
+    link: "https://i.imgur.com/WHIZX9k.jpg",
     alt: "Fotografía de un guanaco con las Torres del Paine de fondo, en la patagonia chilena",
   },
 ];
