@@ -1,20 +1,15 @@
 import "../pages/index.css";
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
-import {
-  handleEscapeKey,
-  handleClosePopups,
-  handleClickOutside,
-} from "./utils.js";
 import { popupPhoto, handleOpenPopups } from "./Card.js";
 
 const popupProfile = document.querySelector("#popup-profile");
 const popupProfileForm = document.querySelector(".popup__form_profile");
 const inputNameUser = document.querySelector(".popup__form-input_type_name");
 const inputAboutUser = document.querySelector(".popup__form-input_type_about");
-const popupProfileCloseButton = popupProfile.querySelector(
-  ".popup__close-button"
-);
+// const popupProfileCloseButton = popupProfile.querySelector(
+//   ".popup__close-button"
+// );
 
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
@@ -57,7 +52,7 @@ const cardsSection = document.querySelector(".cards");
 const popupCards = document.querySelector("#popup-cards");
 const popupCardsForm = document.querySelector(".popup__form_cards");
 const addCardsButton = document.querySelector(".profile__add-button");
-const popupCardsCloseButton = popupCards.querySelector(".popup__close-button");
+// const popupCardsCloseButton = popupCards.querySelector(".popup__close-button");
 const inputFormPlaceTitle = document.querySelector(
   ".popup__form-input_type_place"
 );
@@ -65,7 +60,7 @@ const inputFormPlaceLink = document.querySelector(
   ".popup__form-input_type_link"
 );
 
-const popupPhotoCloseButton = popupPhoto.querySelector(".popup__close-button");
+// const popupPhotoCloseButton = popupPhoto.querySelector(".popup__close-button");
 
 function handleProfileFormSubmit(e) {
   e.preventDefault();
@@ -102,17 +97,17 @@ addCardsButton.addEventListener("click", () => {
   handleOpenPopups(popupCards);
 });
 
-popupProfileCloseButton.addEventListener("click", () => {
-  handleClosePopups(popupProfile);
-});
+// popupProfileCloseButton.addEventListener("click", () => {
+//   handleClosePopups(popupProfile);
+// });
 
-popupCardsCloseButton.addEventListener("click", () => {
-  handleClosePopups(popupCards);
-});
+// popupCardsCloseButton.addEventListener("click", () => {
+//   handleClosePopups(popupCards);
+// });
 
-popupPhotoCloseButton.addEventListener("click", () => {
-  handleClosePopups(popupPhoto);
-});
+// popupPhotoCloseButton.addEventListener("click", () => {
+//   handleClosePopups(popupPhoto);
+// });
 
 document.addEventListener("keydown", (e) => {
   handleEscapeKey(e, popupProfile);
