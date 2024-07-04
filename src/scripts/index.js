@@ -46,18 +46,16 @@ const initialCards = [
 ];
 const cardsSection = document.querySelector(".cards");
 
-const popupCards = document.querySelector("#popup-cards");
+// const popupCards = document.querySelector("#popup-cards");
 const popupCardsForm = document.querySelector(".popup__form_cards");
 const addCardsButton = document.querySelector(".profile__add-button");
 const inputFormPlaceTitle = document.querySelector(
   ".popup__form-input_type_place"
 );
+
 const inputFormPlaceLink = document.querySelector(
   ".popup__form-input_type_link"
-
-  );
-
-
+);
 
 const popupProfile = new PopupWithForm("#popup-profile", () => {
   profileName.textContent = inputNameUser.value;
@@ -65,36 +63,27 @@ const popupProfile = new PopupWithForm("#popup-profile", () => {
 });
 popupProfile.setEventListeners();
 
-// function handleProfileFormSubmit(e) {
-//   e.preventDefault();
-//   profileName.textContent = inputNameUser.value;
-//   profileDescription.textContent = inputAboutUser.value;
-//   popupProfile.classList.remove("popup_open");
-// }
-
-function handlePopupCardsSubmit(e) {
-  e.preventDefault();
+const popupCards = new PopupWithForm("#popup-cards", () => {
   const newCard = new Card(
     inputFormPlaceTitle.value,
     inputFormPlaceLink.value
   ).createCard();
-  handleClosePopups(popupCards);
   cardsSection.prepend(newCard);
-}
+});
+popupCards.setEventListeners();
 
 initialCards.forEach((item) => {
   const initialCard = new Card(item.name, item.link).createCard();
   cardsSection.append(initialCard);
 });
 
-
-
 profileEditButton.addEventListener("click", () => {
   popupProfile.handleOpen();
 });
 
-// popupProfileForm.addEventListener("submit", handleProfileFormSubmit);
-// popupCardsForm.addEventListener("submit", handlePopupCardsSubmit);
+addCardsButton.addEventListener("click", () => {
+  popupCards.handleOpen();
+});
 
 const config = {
   formSelector: ".popup__form",
