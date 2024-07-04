@@ -54,17 +54,23 @@ const inputFormPlaceTitle = document.querySelector(
 );
 const inputFormPlaceLink = document.querySelector(
   ".popup__form-input_type_link"
-);
 
-const popupProfile = new PopupWithForm("#popup-profile", () => {});
-popupProfile.setEventListeners();
+  );
 
-function handleProfileFormSubmit(e) {
-  e.preventDefault();
+
+
+const popupProfile = new PopupWithForm("#popup-profile", () => {
   profileName.textContent = inputNameUser.value;
   profileDescription.textContent = inputAboutUser.value;
-  popupProfile.classList.remove("popup_open");
-}
+});
+popupProfile.setEventListeners();
+
+// function handleProfileFormSubmit(e) {
+//   e.preventDefault();
+//   profileName.textContent = inputNameUser.value;
+//   profileDescription.textContent = inputAboutUser.value;
+//   popupProfile.classList.remove("popup_open");
+// }
 
 function handlePopupCardsSubmit(e) {
   e.preventDefault();
@@ -81,15 +87,14 @@ initialCards.forEach((item) => {
   cardsSection.append(initialCard);
 });
 
-inputNameUser.value = profileName.textContent;
-inputAboutUser.value = profileDescription.textContent;
+
 
 profileEditButton.addEventListener("click", () => {
   popupProfile.handleOpen();
 });
 
-popupProfileForm.addEventListener("submit", handleProfileFormSubmit);
-popupCardsForm.addEventListener("submit", handlePopupCardsSubmit);
+// popupProfileForm.addEventListener("submit", handleProfileFormSubmit);
+// popupCardsForm.addEventListener("submit", handlePopupCardsSubmit);
 
 const config = {
   formSelector: ".popup__form",
