@@ -1,7 +1,7 @@
 import "../pages/index.css";
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
-
+import { popupPhoto } from "./Card.js";
 import PopupWithForm from "./PopupWithForm.js";
 
 const popupProfileForm = document.querySelector(".popup__form_profile");
@@ -71,6 +71,8 @@ const popupCards = new PopupWithForm("#popup-cards", () => {
   cardsSection.prepend(newCard);
 });
 popupCards.setEventListeners();
+
+
 
 initialCards.forEach((item) => {
   const initialCard = new Card(item.name, item.link).createCard();
