@@ -18,10 +18,14 @@ export default class FormValidator {
         this._toggleButtonState();
       });
     });
+    this._formElement.addEventListener("reset", () => {
+      this._toggleButtonState();
+    })
   }
 
   _toggleButtonState() {
     if (this._hasInvalidInput()) {
+      console.log(this._hasInvalidInput());
       this._buttonElement.classList.add(this._config.inactiveButtonClass);
     } else {
       this._buttonElement.classList.remove(this._config.inactiveButtonClass);
@@ -29,8 +33,8 @@ export default class FormValidator {
   }
 
   _hasInvalidInput() {
-    return !this._inputList.some((inputElement) => {
-      return inputElement.validity.valid;
+    return this._inputList.some((inputElement) => {
+      return !inputElement.validity.valid;
     });
   }
 
