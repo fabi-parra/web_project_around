@@ -7,19 +7,19 @@ export default class Popup {
     this._handleEscapeKey = this._handleEscapeKey.bind(this);
   }
 
-  handleOpen() {
-    this._popupElement.classList.add("popup_open");
-  }
-
   handleClose() {
     this._popupElement.classList.remove("popup_open");
-    document.addEventListener("keydown", this._handleEscapeKey);
   }
 
   _handleEscapeKey(e) {
     if (e.key === "Escape") {
       this.handleClose();
-    };
+    }
+  }
+
+  handleOpen() {
+    this._popupElement.classList.add("popup_open");
+    document.addEventListener("keydown", this._handleEscapeKey);
   }
 
   setEventListeners() {

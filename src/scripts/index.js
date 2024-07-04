@@ -2,7 +2,7 @@ import "../pages/index.css";
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 
-// import PopupWithForm from "./PopupWithForm.js";
+import PopupWithForm from "./PopupWithForm.js";
 
 const popupProfileForm = document.querySelector(".popup__form_profile");
 const inputNameUser = document.querySelector(".popup__form-input_type_name");
@@ -56,8 +56,8 @@ const inputFormPlaceLink = document.querySelector(
   ".popup__form-input_type_link"
 );
 
-// const popupProfile = new PopupWithForm("#popup-profile", () => {});
-// popupProfile.setEventListeners();
+const popupProfile = new PopupWithForm("#popup-profile", () => {});
+popupProfile.setEventListeners();
 
 function handleProfileFormSubmit(e) {
   e.preventDefault();
