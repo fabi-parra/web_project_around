@@ -1,15 +1,12 @@
 import "../pages/index.css";
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
-import { popupPhoto, handleOpenPopups } from "./Card.js";
 
-const popupProfile = document.querySelector("#popup-profile");
+// import PopupWithForm from "./PopupWithForm.js";
+
 const popupProfileForm = document.querySelector(".popup__form_profile");
 const inputNameUser = document.querySelector(".popup__form-input_type_name");
 const inputAboutUser = document.querySelector(".popup__form-input_type_about");
-// const popupProfileCloseButton = popupProfile.querySelector(
-//   ".popup__close-button"
-// );
 
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
@@ -52,7 +49,6 @@ const cardsSection = document.querySelector(".cards");
 const popupCards = document.querySelector("#popup-cards");
 const popupCardsForm = document.querySelector(".popup__form_cards");
 const addCardsButton = document.querySelector(".profile__add-button");
-// const popupCardsCloseButton = popupCards.querySelector(".popup__close-button");
 const inputFormPlaceTitle = document.querySelector(
   ".popup__form-input_type_place"
 );
@@ -60,7 +56,8 @@ const inputFormPlaceLink = document.querySelector(
   ".popup__form-input_type_link"
 );
 
-// const popupPhotoCloseButton = popupPhoto.querySelector(".popup__close-button");
+// const popupProfile = new PopupWithForm("#popup-profile", () => {});
+// popupProfile.setEventListeners();
 
 function handleProfileFormSubmit(e) {
   e.preventDefault();
@@ -88,36 +85,8 @@ inputNameUser.value = profileName.textContent;
 inputAboutUser.value = profileDescription.textContent;
 
 profileEditButton.addEventListener("click", () => {
-  handleOpenPopups(popupProfile);
-  inputNameUser.value = profileName.textContent;
-  inputAboutUser.value = profileDescription.textContent;
+  popupProfile.handleOpen();
 });
-
-addCardsButton.addEventListener("click", () => {
-  handleOpenPopups(popupCards);
-});
-
-// popupProfileCloseButton.addEventListener("click", () => {
-//   handleClosePopups(popupProfile);
-// });
-
-// popupCardsCloseButton.addEventListener("click", () => {
-//   handleClosePopups(popupCards);
-// });
-
-// popupPhotoCloseButton.addEventListener("click", () => {
-//   handleClosePopups(popupPhoto);
-// });
-
-document.addEventListener("keydown", (e) => {
-  handleEscapeKey(e, popupProfile);
-  handleEscapeKey(e, popupCards);
-  handleEscapeKey(e, popupPhoto);
-});
-
-popupProfile.addEventListener("click", handleClickOutside);
-popupCards.addEventListener("click", handleClickOutside);
-popupPhoto.addEventListener("click", handleClickOutside);
 
 popupProfileForm.addEventListener("submit", handleProfileFormSubmit);
 popupCardsForm.addEventListener("submit", handlePopupCardsSubmit);
