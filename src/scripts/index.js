@@ -38,6 +38,8 @@ const popupCards = new PopupWithForm("#popup-cards", () => {
     () =>
       popupPhoto.handleOpen(inputFormPlaceLink.value, inputFormPlaceTitle.value)
   ).createCard();
+  console.log(popupPhoto);
+  console.log(popupPhoto.handleOpen);
   cardsSection.prepend(newCard);
 });
 popupCards.setEventListeners();
