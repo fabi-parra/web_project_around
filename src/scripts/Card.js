@@ -1,21 +1,14 @@
-export function handleOpenPopups(popup) {
-  popup.classList.add("popup_open");
-}
-
-const cardTemplate = document.querySelector(".card-template");
-export const popupPhoto = document.querySelector("#popup-photo");
-export const popupPhotoImage = document.querySelector(".popup__image");
-export const popupPhotoTitle = document.querySelector(".popup__subtitle");
-
 export default class Card {
-  constructor(name, link) {
+  constructor(name, link, handleCardClick) {
     this._name = name;
     this._link = link;
+    this._cardTemplate = document.querySelector(".card-template");
     this._card = this._getTemplate();
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
-    return cardTemplate.cloneNode(true).content.querySelector(".card");
+    return this._cardTemplate.cloneNode(true).content.querySelector(".card");
   }
 
   _setProperties() {
@@ -44,10 +37,7 @@ export default class Card {
       this._handleDeleteCard();
     });
     this._cardImage.addEventListener("click", () => {
-      handleOpenPopups(popupPhoto);
-      popupPhotoImage.src = this._link;
-      popupPhotoImage.alt = this._name;
-      popupPhotoTitle.textContent = this._name;
+      this._handleCardClick();
     });
   }
 

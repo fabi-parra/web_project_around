@@ -5,6 +5,7 @@ export default class FormValidator {
   }
 
   _setEventListeners() {
+    console.log("probando");
     this._inputList = Array.from(
       this._formElement.querySelectorAll(this._config.inputSelector)
     );
