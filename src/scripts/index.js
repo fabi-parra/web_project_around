@@ -3,6 +3,8 @@ import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 import PopupWithForm from "./PopupWithForm.js";
 import PopupWithImage from "./PopupWithImage.js";
+import UserInfo from "./UserInfo.js";
+import Section from "./Section.js";
 import {
   popupProfileForm,
   inputNameUser,
@@ -22,12 +24,16 @@ import {
 inputNameUser.value = profileName.textContent;
 inputAboutUser.value = profileDescription.textContent;
 
+const userInfo = new UserInfo({
+  nameSelector: ".profile__name",
+  descriptionSelector: ".profile__description",
+});
+
 const popupPhoto = new PopupWithImage("#popup-photo");
 popupPhoto.setEventListeners();
 
-const popupProfile = new PopupWithForm("#popup-profile", () => {
-  profileName.textContent = inputNameUser.value;
-  profileDescription.textContent = inputAboutUser.value;
+const popupProfile = new PopupWithForm("#popup-profile", (input) => {
+  userInfo.setUserInfo({ name: input.name, description: input.about });
 });
 popupProfile.setEventListeners();
 
@@ -35,21 +41,35 @@ const popupCards = new PopupWithForm("#popup-cards", () => {
   const newCard = new Card(
     inputFormPlaceTitle.value,
     inputFormPlaceLink.value,
-    () =>
-      popupPhoto.handleOpen(inputFormPlaceLink.value, inputFormPlaceTitle.value)
+    (link, name) => popupPhoto.handleOpen(link, name)
   ).createCard();
-  console.log(popupPhoto);
-  console.log(popupPhoto.handleOpen);
   cardsSection.prepend(newCard);
 });
 popupCards.setEventListeners();
 
-initialCards.forEach((item) => {
-  const initialCard = new Card(item.name, item.link, () =>
-    popupPhoto.handleOpen(item.link, item.name)
-  ).createCard();
-  cardsSection.append(initialCard);
-});
+// initialCards.forEach((item) => {
+//   const initialCard = new Card(item.name, item.link, () =>
+//     popupPhoto.handleOpen(item.link, item.name)
+//   ).createCard();
+//   cardsSection.append(initialCard);
+// });
+
+const cardList = new Section(
+  {
+    items: initialCards,
+    renderer: (item) => {
+      const cards = new Card(item.name, item.link, () => {
+        popupPhoto.handleOpen(item.link, item.name);
+      });
+      const cardElement = cards.createCard();
+
+      cardList.addItem(cardElement);
+    },
+  },
+  ".cards"
+);
+
+cardList.renderItems();
 
 profileEditButton.addEventListener("click", () => {
   popupProfile.handleOpen(
