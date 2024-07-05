@@ -1,10 +1,10 @@
-import "../pages/index.css";
-import Card from "./Card.js";
-import FormValidator from "./FormValidator.js";
-import PopupWithForm from "./PopupWithForm.js";
-import PopupWithImage from "./PopupWithImage.js";
-import UserInfo from "./UserInfo.js";
-import Section from "./Section.js";
+import "./index.css";
+import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import UserInfo from "../components/UserInfo.js";
+import Section from "../components/Section.js";
 import {
   popupProfileForm,
   inputNameUser,
@@ -19,7 +19,7 @@ import {
   inputFormPlaceTitle,
   inputFormPlaceLink,
   config,
-} from "./utils.js";
+} from "../scripts/utils.js";
 
 inputNameUser.value = profileName.textContent;
 inputAboutUser.value = profileDescription.textContent;
@@ -46,13 +46,6 @@ const popupCards = new PopupWithForm("#popup-cards", () => {
   cardsSection.prepend(newCard);
 });
 popupCards.setEventListeners();
-
-// initialCards.forEach((item) => {
-//   const initialCard = new Card(item.name, item.link, () =>
-//     popupPhoto.handleOpen(item.link, item.name)
-//   ).createCard();
-//   cardsSection.append(initialCard);
-// });
 
 const cardList = new Section(
   {

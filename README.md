@@ -1,4 +1,4 @@
-# Proyecto 8: Página web "Alrededor de Chile"
+# Proyecto 9: Página web "Alrededor de Chile"
 
 La página web "Alrededor de Chile" es el proyecto del curso de Desarrollo Web de Tripleten que abarca desde el Sprint 5 hasta el término curso. Es una sitio que muestra imágenes del país, dando la opción de modificar el perfil, añadir nuevas fotos a la galería o eliminarlas.
 
@@ -16,6 +16,7 @@ La página web "Alrededor de Chile" es el proyecto del curso de Desarrollo Web d
 Para la creación de esta página se aplicaron los conocimientos obtenidos hasta ahora en el curso, con énfasis en Javascript y validación de formularios.
 
 - Javascript para la interactividad de formularios y botones que abren y cierran 3 popups.
+- Refactorización del código anterior con enfoque en programación orientada a objetos. Se crean 5 clases que realizan funciones específicas, tanto para abrir y cerrar los popups, como para modificar el perfil, añadir nuevas cartas y renderizar todos los elementos en la página.
 - Conocimientos de Javascript modular para la refactorización del código basándose en la programación orientada a objetos, con 2 clases principales de objetos: Card y FormValidator.
 - Javascript, HTML y CSS para la validación de los 2 formularios incorporados hasta el momento.
 - Uso de estructura de archivos plana de BEM: los archivos de estilos se organizan en bloques de acuerdo con la metodología BEM. Cada bloque cuenta con sus estilos y se importan a un único archivo, index.css, mediante el método @import. Se vincula este archivo CSS raíz al archivo HTML.
