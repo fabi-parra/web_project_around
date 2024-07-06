@@ -17,11 +17,11 @@
   color: #000;
   border-radius: 10px;
   overflow: hidden;
+  transition: transform .6s;
 }
 
 .card:hover{
   transform: scale(1.08);
-  transition: .6s;
 }
 
 .card__image {
