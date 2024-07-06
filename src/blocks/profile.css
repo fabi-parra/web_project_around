@@ -56,7 +56,7 @@
   background-position: center;
   width: 30px;
   height: 30px;
-  transition: width 1s, height 1s;
+  transition: width .6s, height .6s;
 }
 
 .profile__edit-button:hover {

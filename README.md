@@ -16,24 +16,9 @@ En esta fase, el enfoque está puesto en Javascript y la refactorización del c�
 
 Para la creación de esta página se aplicaron los conocimientos obtenidos hasta ahora en el curso, con énfasis en Javascript, validación de formularios y programación orientada a objetos. A continuación se realiza una descripción:
 
-- Aplicación de conocimientos de Javascript modular
-
-
-Las ventanas emergentes (popups) se crean con ayuda de HTML y CSS. No
-deberían crearse de forma dinámica mediante JS.
-Los cuadros emergentes (popup boxes) pueden cerrarse en cualquier
-resolución de pantalla.
-El cuadro emergente con la imagen se abre correctamente, y las imágenes se
-muestran respetando las proporciones de aspecto.
-La ventana emergente se puede cerrar al hacer clic en cualquier lugar fuera
-de sus bordes, o al pulsar la tecla Esc.
-La ventana emergente no se cierra al hacer clic dentro de sus bordes (en el
-propio formulario, no en la ventana).
-
-
-
+- Aplicación de conocimientos de Javascript para crear cuadros emergentes que se cierran en todas las resoluciones de pantalla, dando clic en el icono, apretando escape o haciendo clic fuera del popup.
 - Refactorización del código anterior con enfoque en programación orientada a objetos. Se crean 3 clases adicionales a FormValidator y Card, que realizan funciones específicas, tanto para abrir y cerrar los popups, como para modificar el perfil, añadir nuevas cartas y renderizar todos los elementos en la página.
-- Modificación de la clase
+- Modificación de la clase Card con base en programación orientada a objetos. Se conecta esta clase al popup con el formulario para crear tarjetas. Además, se conecta con una función que abrirá el popup al dar clic en la fotografía de cada tarjeta.
 - Javascript, HTML y CSS para la validación de los 2 formularios incorporados hasta el momento.
 - Uso de estructura de archivos plana de BEM: los archivos de estilos se organizan en bloques de acuerdo con la metodología BEM. Cada bloque cuenta con sus estilos y se importan a un único archivo, index.css, mediante el método @import. Se vincula este archivo CSS raíz al archivo HTML.
 - Instalación de fuentes directamente en el proyecto, mediante @font-face.

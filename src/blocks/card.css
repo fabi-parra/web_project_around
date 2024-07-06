@@ -19,6 +19,11 @@
   overflow: hidden;
 }
 
+.card:hover{
+  transform: scale(1.08);
+  transition: .6s;
+}
+
 .card__image {
   width: 100%;
   height: 282px;
@@ -36,6 +41,12 @@
   height: 20px;
 }
 
+.card__icon:hover {
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
 .card__icon_type_like {
   background-image: url("../images/card__like-icon.svg");
   background-repeat: no-repeat;
@@ -50,12 +61,6 @@
   background-image: url("../images/card__like-icon-active.svg");
 }
 
-.card__icon_type_like:hover {
-  opacity: 0.6;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-
 .card__icon_type_delete {
   background-image: url("../images/card__delete-icon.svg");
   background-repeat: no-repeat;
@@ -64,10 +69,4 @@
   position: absolute;
   right: 18px;
   bottom: 315px;
-}
-
-.card__icon_type_delete:hover {
-  opacity: 0.6;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
 }
