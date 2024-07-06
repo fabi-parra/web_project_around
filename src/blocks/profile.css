@@ -62,12 +62,11 @@
   background-position: center;
   width: 30px;
   height: 30px;
-  transition: width .6s, height .6s;
+  transition: transform .7s;
 }
 
 .profile__edit-button:hover {
-  width: 35px;
-  height: 35px;
+  transform: scale(1.5);
   opacity: 0.8;
   cursor: pointer;
 }
@@ -82,12 +81,14 @@
   background-size: 10%;
   width: 100%;
   height: 50px;
+  transition: transform .5s, opacity .5s;
 }
 
 .profile__add-button:hover {
+  transform: scale(1.08);
   opacity: 0.6;
   cursor: pointer;
-  transition: opacity 0.3s ease;
+
 }
 
 @media screen and (min-width: 425px) {
