@@ -17,7 +17,7 @@
   color: #000;
   border-radius: 10px;
   overflow: hidden;
-  transition: transform .6s;
+  transition: transform .4s;
 }
 
 .card:hover{
