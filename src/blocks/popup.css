@@ -107,6 +107,7 @@
 .popup__form-button:hover {
   opacity: 0.8;
   cursor: pointer;
+  transition: opacity 0.3s ease;
 }
 
 .popup__form-error-message {
@@ -133,6 +134,7 @@
 
 .popup__close-button:hover {
   opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
 @media screen and (min-width: 560px) {

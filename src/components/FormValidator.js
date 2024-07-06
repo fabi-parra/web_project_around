@@ -5,7 +5,6 @@ export default class FormValidator {
   }
 
   _setEventListeners() {
-    console.log("probando");
     this._inputList = Array.from(
       this._formElement.querySelectorAll(this._config.inputSelector)
     );
@@ -21,12 +20,11 @@ export default class FormValidator {
     });
     this._formElement.addEventListener("reset", () => {
       this._toggleButtonState();
-    })
+    });
   }
 
   _toggleButtonState() {
     if (this._hasInvalidInput()) {
-      console.log(this._hasInvalidInput());
       this._buttonElement.classList.add(this._config.inactiveButtonClass);
     } else {
       this._buttonElement.classList.remove(this._config.inactiveButtonClass);
