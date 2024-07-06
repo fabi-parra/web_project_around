@@ -13,7 +13,7 @@
 .popup_open {
   opacity: 1;
   pointer-events: unset;
-  transition: opacity .4s;
+  transition: opacity 0.4s;
 }
 
 .popup__container {
@@ -51,8 +51,8 @@
   font-size: 18px;
 }
 
-.popup__subtitle{
-  font-family: 'Inter medium 500';
+.popup__subtitle {
+  font-family: "Inter medium 500";
   margin: 0;
   font-size: 20px;
   color: #fff;
@@ -70,7 +70,7 @@
   padding: 0px 20px;
 }
 
-.popup__form-input:focus{
+.popup__form-input:focus {
   outline: none;
 }
 
@@ -82,7 +82,7 @@
   border: none;
   border-radius: 4px;
   margin-top: 40px;
-  transition: background-color;
+  transition: background-color 0.3s;
 }
 
 .popup__form-button_disabled {
@@ -94,8 +94,7 @@
 
 .popup__form-button:hover {
   cursor: pointer;
-  background-color: #9d395c;
-  transition: 0.3s ease;
+  background-color: #a23b79;
 }
 
 .popup__form-error-message {
