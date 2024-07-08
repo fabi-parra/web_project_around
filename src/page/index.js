@@ -6,6 +6,8 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import UserInfo from "../components/UserInfo.js";
 import Section from "../components/Section.js";
 import {
+  // profilePhoto,
+  // inputPopupPhotoLink,
   popupProfileForm,
   inputNameUser,
   inputAboutUser,
@@ -78,3 +80,14 @@ addCardsButton.addEventListener("click", () => {
   const cardsFormValidator = new FormValidator(config, popupCardsForm);
   cardsFormValidator.enableValidation();
 });
+
+// const popupChangeProfilePhoto = new PopupWithForm ("#popup-profile-photo", () => {
+//   inputPopupPhotoLink.value = profilePhoto.src;
+// })
+// popupChangeProfilePhoto.setEventListeners();
+
+// profilePhoto.addEventListener("click", ()=>{
+//   popupChangeProfilePhoto.handleOpen();
+//   const profilePhotoFormValidator = new FormValidator(config, popupChangeProfilePhoto);
+//   profilePhotoFormValidator.enableValidation();
+// });
