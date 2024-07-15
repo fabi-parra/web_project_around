@@ -1,5 +1,3 @@
-// const profilePhoto = document.querySelector(".profile__image");
-// const inputPopupPhotoLink = document.querySelector(".popup__form-input_type_link-profile-photo");
 const popupProfileForm = document.querySelector(".popup__form_profile");
 const inputNameUser = document.querySelector(".popup__form-input_type_name");
 const inputAboutUser = document.querySelector(".popup__form-input_type_about");
@@ -62,8 +60,6 @@ const config = {
 };
 
 export {
-  // profilePhoto,
-  // inputPopupPhotoLink,
   popupProfileForm,
   inputNameUser,
   inputAboutUser,
