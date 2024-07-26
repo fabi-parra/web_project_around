@@ -47,18 +47,34 @@
   transition: opacity 0.3s ease;
 }
 
-.card__icon_type_like {
-  background-image: url("../images/card__like-icon.svg");
-  background-repeat: no-repeat;
-  background-size: 90%;
-  background-position: center;
+.card__like-elements-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   right: 18px;
   bottom: 24px;
+  gap: 5px;
+}
+
+.card__icon_type_like {
+  background-image: url("../images/card__like-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+
 }
 
 .card__icon_type_like-active {
   background-image: url("../images/card__like-icon-active.svg");
+}
+
+.card__like-counter {
+  font-family: "Inter medium 500", Arial, sans-serif;
+  color: #000;
+  display: block;
+  font-size: 1.2rem;
+  margin: 0;
 }
 
 .card__icon_type_delete {

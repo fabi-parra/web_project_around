@@ -5,6 +5,7 @@ import PopupWithForm from "../components/PopupWithForm.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import UserInfo from "../components/UserInfo.js";
 import Section from "../components/Section.js";
+import Api from "../components/Api.js";
 import {
   popupProfileForm,
   inputNameUser,
@@ -12,7 +13,6 @@ import {
   profileName,
   profileDescription,
   profileEditButton,
-  initialCards,
   cardsSection,
   popupCardsForm,
   addCardsButton,
@@ -27,42 +27,32 @@ inputAboutUser.value = profileDescription.textContent;
 const userInfo = new UserInfo({
   nameSelector: ".profile__name",
   descriptionSelector: ".profile__description",
+  avatarSelector: ".profile__image",
 });
 
 const popupPhoto = new PopupWithImage("#popup-photo");
 popupPhoto.setEventListeners();
 
-const popupProfile = new PopupWithForm("#popup-profile", (input) => {
-  userInfo.setUserInfo({ name: input.name, description: input.about });
+const popupProfile = new PopupWithForm("#popup-profile", (inputs) => {
+  api.editProfile(inputs).then((result) => {
+    userInfo.setUserInfo(result);
+    popupProfile.handleClose();
+  })
 });
 popupProfile.setEventListeners();
 
-const popupCards = new PopupWithForm("#popup-cards", () => {
-  const newCard = new Card(
-    inputFormPlaceTitle.value,
-    inputFormPlaceLink.value,
-    (link, name) => popupPhoto.handleOpen(link, name)
-  ).createCard();
-  cardsSection.prepend(newCard);
+const popupCards = new PopupWithForm("#popup-cards", (inputs) => {
+  console.log(inputs);
+  api.addCard(inputs).then((result) => {
+    const newCard = new Card(
+      result,
+      popupPhoto.handleOpen
+    ).createCard();
+    cardsSection.prepend(newCard);
+    popupCards.handleClose
+  })
 });
 popupCards.setEventListeners();
-
-const cardList = new Section(
-  {
-    items: initialCards,
-    renderer: (item) => {
-      const cards = new Card(item.name, item.link, () => {
-        popupPhoto.handleOpen(item.link, item.name);
-      });
-      const cardElement = cards.createCard();
-
-      cardList.addItem(cardElement);
-    },
-  },
-  ".cards"
-);
-
-cardList.renderItems();
 
 profileEditButton.addEventListener("click", () => {
   popupProfile.handleOpen(
@@ -79,3 +69,41 @@ addCardsButton.addEventListener("click", () => {
   cardsFormValidator.enableValidation();
 });
 
+const api = new Api({
+  baseUrl: "https://around.nomoreparties.co/v1/web_es_11",
+  headers: {
+    authorization: "e5108f9c-e4b2-41e4-a072-d45a0c0a8768",
+    "Content-Type": "application/json",
+  },
+});
+
+api.getInitialCards().then((result) => {
+  console.log(result)
+  const cardList = new Section(
+    {
+      items: result,
+      renderer: (item) => {
+        const card = new Card(
+          item,
+          userInfo._userId,
+          () => {
+            return api.addLike(item._id); //CREAR
+          },
+          () => {
+            return api.removeLike(item._id); //CREAR remove o deleteLike
+          },
+          popupPhoto.handleOpen,
+        );
+        const cardElement = card.createCard();
+        cardList.addItem(cardElement);
+      },
+    },
+    ".cards"
+  );
+  cardList.renderItems();
+});
+
+api.getUserInfo().then((result) => {
+  console.log(result);
+  userInfo.setUserInfo(result);
+});

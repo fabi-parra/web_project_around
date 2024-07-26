@@ -48,8 +48,12 @@
         <article class="card">
           <img id= "card-image" alt=" " class="card__image" />
           <h2 class="card__title"></h2>
-          <div class="card__icon card__icon_type_like"></div>
           <div class="card__icon card__icon_type_delete"></div>
+          <div class="card__like-elements-container">
+            <div class="card__icon card__icon_type_like"></div>
+            <span class="card__like-counter">0</span>
+          </div>
+
         </article>
       </template>
     </main>
@@ -102,6 +106,7 @@
             type="text"
             class="popup__form-input popup__form-input_type_place"
             id="place-name"
+            name="name"
             placeholder="Título"
             minlength="2"
             maxlength="30"
@@ -112,6 +117,7 @@
             type="url"
             class="popup__form-input popup__form-input_type_link"
             id="image-link"
+            name="link"
             placeholder="Enlace a la imagen"
             required
           />
