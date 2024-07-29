@@ -14,7 +14,7 @@
   max-width: 282px;
   background-color: #fff;
   font-family: "Inter black", "Arial", sans-serif;
-  color: #282828;
+  color: #2e2e2e;
   border-radius: 10px;
   overflow: hidden;
   transition: transform .3s;
@@ -65,7 +65,6 @@
   background-repeat: no-repeat;
   background-size: 95%;
   background-position: center;
-
 }
 
 .card__icon_type_like-active {
