@@ -5,18 +5,12 @@ const inputAboutUser = document.querySelector(".popup__form-input_type_about");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 const profileEditButton = document.querySelector(".profile__edit-button");
+const profileAvatarContainer = document.querySelector(".profile__avatar-container");
 
 const cardsSection = document.querySelector(".cards");
 
 const popupCardsForm = document.querySelector(".popup__form_cards");
 const addCardsButton = document.querySelector(".profile__add-button");
-const inputFormPlaceTitle = document.querySelector(
-  ".popup__form-input_type_place"
-);
-
-const inputFormPlaceLink = document.querySelector(
-  ".popup__form-input_type_link"
-);
 
 const config = {
   formSelector: ".popup__form",
@@ -33,11 +27,10 @@ export {
   inputAboutUser,
   profileName,
   profileDescription,
+  profileAvatarContainer,
   profileEditButton,
   cardsSection,
   popupCardsForm,
   addCardsButton,
-  inputFormPlaceTitle,
-  inputFormPlaceLink,
-  config
+  config,
 };

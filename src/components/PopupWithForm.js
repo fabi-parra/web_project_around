@@ -8,6 +8,7 @@ export default class PopupWithForm extends Popup {
     this._inputList = Array.from(
       this._formElement.querySelectorAll(".popup__form-input")
     );
+    this._formButton = this._popupElement.querySelector(".popup__form-button");
   }
   _getInputValues() {
     this._formValues = {};
@@ -19,9 +20,14 @@ export default class PopupWithForm extends Popup {
   }
 
   handleOpen(contentFirstInput, contentSecondInput) {
+    this._formButton.textContent = "Guardar";
     super.handleOpen();
     this._inputList[0].value = contentFirstInput || "";
-    this._inputList[1].value = contentSecondInput || "";
+    if (this._inputList[1]) {
+      this._inputList[1].value = contentSecondInput || "";
+    } else {
+      
+    }
   }
 
   handleClose() {
@@ -33,8 +39,9 @@ export default class PopupWithForm extends Popup {
     super.setEventListeners();
     this._formElement.addEventListener("submit", (e) => {
       e.preventDefault();
-      this._handleFormSubmit(this._getInputValues());
-      this.handleClose();
+      this._formButton.textContent = "Guardando...";
+      const close = () => this.handleClose();
+      this._handleFormSubmit(this._getInputValues(), close);
     });
   }
 }

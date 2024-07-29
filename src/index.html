@@ -27,11 +27,14 @@
 
     <main class="content">
       <section class="profile">
-        <img
+        <div class="profile__avatar-container">
+          <img
           src= "<%=require('./images/profile__image.png')%>"
           alt="espacio con forma circular donde va una foto de perfil del usuario o usuaria"
           class="profile__image"
-        />
+          />
+          <button title="editar-foto-perfil" class="profile__avatar-button-edit" type="button"></button>
+        </div>
         <div class="profile__info-container">
           <div class="profile__name-container">
             <h2 class="profile__name">Fabiola Parra</h2>
@@ -51,7 +54,7 @@
           <div class="card__icon card__icon_type_delete"></div>
           <div class="card__like-elements-container">
             <div class="card__icon card__icon_type_like"></div>
-            <span class="card__like-counter">0</span>
+            <span class="card__like-counter"></span>
           </div>
 
         </article>
@@ -134,6 +137,39 @@
         <div class="popup__close-button"> </div>
         <img src=" " class="popup__image" alt="" />
         <h2 class="popup__subtitle"></h2>
+      </div>
+    </section>
+
+    <section class="popup" id="popup-avatar-profile">
+      <div class="popup__container">
+        <div class="popup__close-button"></div>
+        <h2 class="popup__title">Cambiar foto de perfil</h2>
+        <form name="profile-avatar-form" class="popup__form popup__form_avatar-profile">
+          <input
+            type="url"
+            class="popup__form-input popup__form-input_type_link"
+            id="image-link"
+            name="avatarLink"
+            placeholder="Enlace a la imagen"
+            required
+          />
+          <span class="popup__form-error-message image-link-error"></span>
+          <button type="submit" value="submit" class="popup__form-button">
+            Guardar
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section class="popup" id="popup-delete-confirmation">
+      <div class="popup__container popup__container_type_delete-confirmation">
+        <div class="popup__close-button"></div>
+        <h2 class="popup__title">¿Estás segura/o?</h2>
+        <form name="delete-confirmation-form" class="popup__form popup__form_delete-confirmation">
+          <button type="submit" value="submit" class="popup__form-button">
+            Sí
+          </button>
+        </form>
       </div>
     </section>
 
