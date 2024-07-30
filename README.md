@@ -51,6 +51,7 @@ Para la creación de esta página se aplicaron los conocimientos obtenidos hasta
 
 ###### Capturas de pantalla del proyecto
 
+![Vista general](src/images/captura-vista-general-proyecto.png)
 ![Captura popup de confirmación](src/images/captura-popup-confirmation.png)
 ![Captura mensaje guardando](src/images/captura-saving.png)
 ![Captura validación](src/images/captura-validation.png)
