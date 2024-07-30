@@ -28,6 +28,19 @@ Para la creación de esta página se aplicaron los conocimientos obtenidos hasta
 - Uso de media queries.
 - Flexbox básico y avanzado.
 
-[![alt text](https://img.youtube.com/vi/video-id/0.jpg)](https://www.youtube.com/watch?v=video-id)
+#### Video demostrativo del proyecto
+
+[![Video demostrativo del proyecto](src/images/captura-proyecto.png)]()
+
+##### Gifs del proyecto
 
 ![Alt text](file-path) //url 
+
+
+
+###### Capturas de pantalla del proyecto
+
+![Captura botón para añadir tarjetas](src/images/captura-add-card_button.png)
+![Captura botón para editar avatar de perfil](src/images/captura-add-card_button.png)
+
+
