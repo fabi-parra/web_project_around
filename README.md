@@ -30,12 +30,13 @@ Para la creación de esta página se aplicaron los conocimientos obtenidos hasta
 
 #### Video demostrativo del proyecto
 
-[![Video demostrativo del proyecto](src/images/captura-proyecto.png)](src/images/project_video_fabiola-parra.mp4)
+[![Video demostrativo del proyecto](src/images/captura-proyecto.png)](https://youtu.be/ueAWIsuUogM)
 
 ##### Gifs del proyecto
 
-![Alt text](file-path) //url 
-
+![Botón para editar información de perfil](src/images/gif_edit-profile_button.gif)
+![Botón para añadir cartas](src/images/gif_add-card_button.gif)
+![Botón para cambiar avatar](src/images/gif_edit-avatar_button.gif)
 
 
 ###### Capturas de pantalla del proyecto
