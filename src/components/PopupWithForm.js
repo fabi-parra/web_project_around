@@ -25,8 +25,6 @@ export default class PopupWithForm extends Popup {
     this._inputList[0].value = contentFirstInput || "";
     if (this._inputList[1]) {
       this._inputList[1].value = contentSecondInput || "";
-    } else {
-      
     }
   }
 

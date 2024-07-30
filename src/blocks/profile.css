@@ -21,6 +21,7 @@
   cursor: pointer;
   transition: transform 0.3s;
   object-fit: cover;
+  box-shadow: 6px 6px 10px rgba(46, 46, 46, 0.5);
 }
 
 .profile__avatar-container:hover .profile__image {
@@ -43,13 +44,13 @@
   margin: auto;
   opacity: 0;
   z-index: 1;
-  transition: transform 0.6s;
+  transition: transform .7s;
 }
 
 .profile__avatar-container:hover .profile__avatar-button-edit {
   opacity: 1;
   cursor: pointer;
-  transform: scale(1.5);
+  transform: scale(1.9);
 }
 
 .profile__name-container {
@@ -90,8 +91,8 @@
   background-image: url("../images/avatar__edit-button.svg");
   background-repeat: no-repeat;
   background-position: center;
-  width: 30px;
-  height: 30px;
+  width: 33px;
+  height: 33px;
   transition: transform 0.3s;
 }
 
@@ -104,7 +105,7 @@
 .profile__add-button {
   border-radius: 5px;
   border-color: #fff;
-  border-style: solid;
+  border: 4px solid;
   background-image: url("../images/profile__add-button.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -145,6 +146,10 @@
     text-align: left;
   }
 
+  .profile__info-container {
+    max-width: 210px;
+  }
+
   .profile__name-container {
     display: flex;
     gap: 15px;
@@ -176,6 +181,10 @@
 
   .profile__container {
     gap: 31px;
+  }
+
+  .profile__info-container {
+    max-width: 500px;
   }
 
   .profile__name {

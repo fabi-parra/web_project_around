@@ -6,6 +6,7 @@ const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileAvatarContainer = document.querySelector(".profile__avatar-container");
+const profileAvatarForm = document.querySelector(".popup__form_avatar-profile");
 
 const cardsSection = document.querySelector(".cards");
 
@@ -32,5 +33,6 @@ export {
   cardsSection,
   popupCardsForm,
   addCardsButton,
+  profileAvatarForm,
   config,
 };

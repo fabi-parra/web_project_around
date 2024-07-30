@@ -56,10 +56,14 @@ export default class Card {
   _setEventListeners() {
     this._likeButton.addEventListener("click", () => {
       if (this._likes.some((item) => item._id === this._userId)) {
-        this._handleUnlikeCard(this._cardId);
+        this._handleUnlikeCard(this._cardId).then((cardWithLike) => {
+          this._changeLikeCounter(cardWithLike.likes);
+        });
         this._likeButton.classList.toggle("card__icon_type_like-active");
       } else {
-        this._handleLikeCard(this._cardId);
+        this._handleLikeCard(this._cardId).then((cardWithLike) => {
+          this._changeLikeCounter(cardWithLike.likes);
+        });
         this._likeButton.classList.toggle("card__icon_type_like-active");
       }
     });

@@ -27,3 +27,7 @@ Para la creación de esta página se aplicaron los conocimientos obtenidos hasta
 - Grid layout.
 - Uso de media queries.
 - Flexbox básico y avanzado.
+
+[![alt text](https://img.youtube.com/vi/video-id/0.jpg)](https://www.youtube.com/watch?v=video-id)
+
+![Alt text](file-path) //url 

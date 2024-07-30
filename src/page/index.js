@@ -18,6 +18,7 @@ import {
   popupCardsForm,
   addCardsButton,
   profileAvatarContainer,
+  profileAvatarForm,
   config,
 } from "../scripts/utils.js";
 
@@ -50,16 +51,8 @@ api.getUserInfo().then((result) => {
           const card = new Card(
             item,
             userInfo._userId,
-            () => {
-              api.addLike(item._id).then((cardWithLike) => {
-                card._changeLikeCounter(cardWithLike.likes);
-              });
-            },
-            () => {
-              api.removeLike(item._id).then((cardWithLike) => {
-                card._changeLikeCounter(cardWithLike.likes);
-              });
-            },
+            (cardId) => api.addLike(cardId),
+            (cardId) => api.removeLike(cardId),
             popupPhoto.handleOpen,
             () => {
               popupWithConfirmation.handleOpen(item._id);
@@ -74,6 +67,28 @@ api.getUserInfo().then((result) => {
     cardList.renderItems();
   });
 });
+
+const popupCards = new PopupWithForm("#popup-cards", (inputs, onClose) => {
+  console.log(inputs);
+  api.addCard(inputs).then((result) => {
+    console.log(result)
+    const newCard = new Card(
+      result,
+      userInfo._userId,
+      (cardId) => api.addLike(cardId),
+      (cardId) => api.removeLike(cardId),
+      popupPhoto.handleOpen,
+      () => {
+        popupWithConfirmation.handleOpen(result._id);
+      }
+    );
+    const newCardElement = newCard.createCard();
+    cardsSection.prepend(newCardElement);
+    popupCards.handleClose;
+    onClose();
+  });
+});
+popupCards.setEventListeners();
 
 const popupPhoto = new PopupWithImage("#popup-photo");
 popupPhoto.setEventListeners();
@@ -90,38 +105,14 @@ popupProfile.setEventListeners();
 const popupAvatarProfile = new PopupWithForm(
   "#popup-avatar-profile",
   (inputs) => {
+    console.log(inputs);
     api.editAvatarProfile(inputs).then((result) => {
-      userInfo.setUserInfo(result.avatar);
+      userInfo.setUserInfo(result);
       popupAvatarProfile.handleClose();
     });
   }
 );
 popupAvatarProfile.setEventListeners();
-
-const popupCards = new PopupWithForm("#popup-cards", (inputs, onClose) => {
-  console.log(inputs);
-  api.addCard(inputs).then((result) => {
-    const newCard = new Card(
-      result,
-      inputs._userId,
-      () => {
-        api.addLike(inputs._id).then((myNewCard) => {
-          newCard._changeLikeCounter(myNewCard.likes);
-        });
-      },
-      () => {
-        api.removeLike(inputs._id).then((newCard) => {
-          newCard._changeLikeCounter(newCard.likes);
-        });
-      },
-      popupPhoto.handleOpen
-    ).createCard();
-    cardsSection.prepend(newCard);
-    popupCards.handleClose;
-    onClose();
-  });
-});
-popupCards.setEventListeners();
 
 const popupWithConfirmation = new PopupWithConfirmation(
   "#popup-delete-confirmation",
@@ -149,7 +140,7 @@ profileAvatarContainer.addEventListener("click", () => {
   popupAvatarProfile.handleOpen();
   const avatarProfileFormValidator = new FormValidator(
     config,
-    popupAvatarProfile
+    profileAvatarForm
   );
   avatarProfileFormValidator.enableValidation();
 });

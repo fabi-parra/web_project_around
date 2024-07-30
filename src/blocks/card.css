@@ -14,9 +14,10 @@
   max-width: 282px;
   background-color: #fff;
   font-family: "Inter black", "Arial", sans-serif;
-  color: #2e2e2e;
+  color: rgb(46, 46, 46);
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: 6px 6px 8px rgba(46, 46, 46, 0.5);
   transition: transform .3s;
 }
 
@@ -33,7 +34,9 @@
 
 .card__title {
   margin: 0;
-  padding: 21px;
+  padding: 22px 18px;
+  display: inline-block;
+  max-width: 205px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -56,7 +59,7 @@
   align-items: center;
   position: absolute;
   right: 18px;
-  bottom: 24px;
+  bottom: 28px;
   gap: 5px;
 }
 
@@ -73,8 +76,6 @@
 
 .card__like-counter {
   font-family: "Inter medium 500", Arial, sans-serif;
-  color: #000;
-  display: block;
   font-size: 1.2rem;
 }
 
