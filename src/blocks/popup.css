@@ -136,7 +136,7 @@
 
   .popup__container_type_popup-photo {
     width: 80%;
-    height: 90%;
+    height: 100%;
     max-width: 75vw;
     max-height: 75vh;
   }

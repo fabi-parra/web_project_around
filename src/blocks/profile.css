@@ -50,7 +50,7 @@
 .profile__avatar-container:hover .profile__avatar-button-edit {
   opacity: 1;
   cursor: pointer;
-  transform: scale(1.9);
+  transform: scale(1.7);
 }
 
 .profile__name-container {
