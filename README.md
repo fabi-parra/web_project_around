@@ -30,7 +30,7 @@ Para la creación de esta página se aplicaron los conocimientos obtenidos hasta
 
 #### Video demostrativo del proyecto
 
-[![Video demostrativo del proyecto](src/images/captura-proyecto.png)]()
+[![Video demostrativo del proyecto](src/images/captura-proyecto.png)](src/images/project_video_fabiola-parra.mp4)
 
 ##### Gifs del proyecto
 
@@ -41,6 +41,5 @@ Para la creación de esta página se aplicaron los conocimientos obtenidos hasta
 ###### Capturas de pantalla del proyecto
 
 ![Captura botón para añadir tarjetas](src/images/captura-add-card_button.png)
-![Captura botón para editar avatar de perfil](src/images/captura-add-card_button.png)
 
 
