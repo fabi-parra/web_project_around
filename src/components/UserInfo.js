@@ -14,7 +14,6 @@ export default class UserInfo {
   }
 
   setUserInfo(data) {
-    console.log(this._name);
     this._name.textContent = data.name;
     this._description.textContent = data.about;
     if (data.avatar) {

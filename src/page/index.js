@@ -40,10 +40,8 @@ const api = new Api({
 });
 
 api.getUserInfo().then((result) => {
-  console.log(result);
   userInfo.setUserInfo(result);
   api.getInitialCards().then((result) => {
-    console.log(result);
     const cardList = new Section(
       {
         items: result,
@@ -69,9 +67,7 @@ api.getUserInfo().then((result) => {
 });
 
 const popupCards = new PopupWithForm("#popup-cards", (inputs, onClose) => {
-  console.log(inputs);
   api.addCard(inputs).then((result) => {
-    console.log(result)
     const newCard = new Card(
       result,
       userInfo._userId,
@@ -105,7 +101,6 @@ popupProfile.setEventListeners();
 const popupAvatarProfile = new PopupWithForm(
   "#popup-avatar-profile",
   (inputs) => {
-    console.log(inputs);
     api.editAvatarProfile(inputs).then((result) => {
       userInfo.setUserInfo(result);
       popupAvatarProfile.handleClose();
@@ -117,7 +112,6 @@ popupAvatarProfile.setEventListeners();
 const popupWithConfirmation = new PopupWithConfirmation(
   "#popup-delete-confirmation",
   (cardToDelete) => {
-    console.log(cardToDelete);
     api.deleteCard(cardToDelete).then(() => {
       popupWithConfirmation.handleClose();
       const card = document.querySelector(`#id_${cardToDelete}`);

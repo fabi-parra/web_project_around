@@ -63,12 +63,16 @@ export default class Api {
       body: JSON.stringify({
         avatar: data.avatarLink,
       }),
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`);
-    });
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return Promise.reject(`Error: ${res.status}`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   addCard(data) {
@@ -108,7 +112,6 @@ export default class Api {
   }
 
   addLike(cardId) {
-    console.log(this.baseUrl);
     return fetch(`${this.baseUrl}/cards/likes/${cardId}`, {
       method: "PUT",
       headers: this.headers,
@@ -121,7 +124,6 @@ export default class Api {
       })
       .catch((err) => {
         console.log(err);
-        alert();
       });
   }
 
