@@ -43,8 +43,8 @@ Para la creación de esta página se aplicaron los conocimientos obtenidos hasta
 
 ##### Gifs del proyecto
 
-![Botón para editar información de perfil](src/images/gif_edit-profile_button.gif)
-![Botón para añadir cartas](src/images/gif_add-card_button.gif)
+![Botón para editar información de perfil](src/images/gif_project/1.gif)
+![Botón para añadir cartas](src/images/gif_project/4.gif)
 ![Botón para cambiar avatar](src/images/gif_edit-avatar_button.gif)
 ![Botón para dar me gusta](src/images/gif_like-button.gif)
 ![Botón para guardar](src/images/gif_save-form_button.gif)
