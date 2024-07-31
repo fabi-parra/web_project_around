@@ -43,12 +43,12 @@ Para la creación de esta página se aplicaron los conocimientos obtenidos hasta
 
 ##### Gifs del proyecto
 
-![Botón para editar información de perfil](src/images/gif_edit-profile-info_button.gif)
-![Botón para añadir cartas](src/images/gif_add-cards_button.gif)
-![Botón para cambiar avatar](src/images/gif_edit-avatar_button.gif)
 ![Botón para dar me gusta](src/images/gif_likes-button.gif)
 ![Hover a las cartas](src/images/gif_cards-hover-effect.gif)
 ![Hover al icono cerrar de los popups](src/images/gif_close-button_hover.gif)
+![Botón para editar información de perfil](src/images/gif_edit-profile-info_button.gif)
+![Botón para añadir cartas](src/images/gif_add-cards_button.gif)
+![Botón para cambiar avatar](src/images/gif_edit-avatar_button.gif)
 
 ###### Capturas de pantalla del proyecto
 
